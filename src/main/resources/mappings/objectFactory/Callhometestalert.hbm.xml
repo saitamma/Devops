@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 18, 2015 3:12:19 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Callhometestalert" table="callhometestalert" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="callhomeEp" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Callhomeep" fetch="select">
+            <column name="FK_callhomeep" not-null="true" />
+        </many-to-one>
+        <property name="description" type="string">
+            <column name="description" />
+        </property>
+        <property name="group" type="string">
+            <column name="group_group" />
+        </property>
+        <property name="level" type="string">
+            <column name="level" />
+        </property>
+        <property name="messageSubtype" type="string">
+            <column name="messageSubtype" />
+        </property>
+        <property name="messageType" type="string">
+            <column name="messageType" />
+        </property>
+        <property name="sendNow" type="string">
+            <column name="sendNow" />
+        </property>
+    </class>
+</hibernate-mapping>

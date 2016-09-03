@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Dpsecmac" table="dpsecmac" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="nwctrldefinition" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Nwctrldefinition" fetch="select">
+            <column name="FK_nwctrlDefinition" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="policyOwner" type="string">
+            <column name="policyOwner" />
+        </property>
+        <property name="descr" type="string">
+            <column name="descr" />
+        </property>
+        <property name="forge" type="string">
+            <column name="forge" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 19, 2015 5:40:55 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Biosvfpcislotlinkspeed" table="biosVfPCISlotLinkSpeed" >
+        <id name="primaryKey" type="java.lang.Integer">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="biosvprofile" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Biosvprofile" fetch="select">
+            <column name="FK_biosVProfile" not-null="true" />
+        </many-to-one>
+        <property name="childAction" type="string">
+            <column name="childAction" />
+        </property>
+        <property name="rn" type="string">
+            <column name="rn" />
+        </property>
+        <property name="vpPcieSlot10linkSpeed" type="string">
+            <column name="vpPCIeSlot10LinkSpeed" />
+        </property>
+        <property name="vpPcieSlot1linkSpeed" type="string">
+            <column name="vpPCIeSlot1LinkSpeed" />
+        </property>
+        <property name="vpPcieSlot2linkSpeed" type="string">
+            <column name="vpPCIeSlot2LinkSpeed" />
+        </property>
+        <property name="vpPcieSlot3linkSpeed" type="string">
+            <column name="vpPCIeSlot3LinkSpeed" />
+        </property>
+        <property name="vpPcieSlot4linkSpeed" type="string">
+            <column name="vpPCIeSlot4LinkSpeed" />
+        </property>
+        <property name="vpPcieSlot5linkSpeed" type="string">
+            <column name="vpPCIeSlot5LinkSpeed" />
+        </property>
+        <property name="vpPcieSlot6linkSpeed" type="string">
+            <column name="vpPCIeSlot6LinkSpeed" />
+        </property>
+        <property name="vpPcieSlot7linkSpeed" type="string">
+            <column name="vpPCIeSlot7LinkSpeed" />
+        </property>
+        <property name="vpPcieSlot8linkSpeed" type="string">
+            <column name="vpPCIeSlot8LinkSpeed" />
+        </property>
+        <property name="vpPcieSlot9linkSpeed" type="string">
+            <column name="vpPCIeSlot9LinkSpeed" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+###########START OF SCRIPT###################
+#!/bin/bash
+export ORACLE_HOME="/opt/oracle/product/current"
+export LD_LIBRARY_PATH="/opt/oracle/product/current/lib"
+export CLASSPATH="/opt/oracle/product/current/jdbc/lib/ojdbc6.jar"
+
+appname=`echo $OPENSHIFT_APP_NAME`
+case "$appname" in
+
+*dev)	export JAVA_OPTS_EXT="${JAVA_OPTS_EXT} -Dcisco.life=dev";;
+
+*stg)	export JAVA_OPTS_EXT="${JAVA_OPTS_EXT} -Dcisco.life=stage";;
+
+*prd)	export JAVA_OPTS_EXT="${JAVA_OPTS_EXT} -Dcisco.life=prod";;
+
+*)	export JAVA_OPTS_EXT="${JAVA_OPTS_EXT} -Dcisco.life=dev";;
+esac

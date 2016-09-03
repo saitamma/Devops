@@ -1,0 +1,86 @@
+<topRoot>
+	<orgOrg descr="" name="root">
+		<fcpoolInitiators assignmentOrder="default" descr="default"
+			maxPortsPerNode="upto3" name="node-default" policyOwner="local"
+			purpose="node-wwn-assignment">
+		</fcpoolInitiators>
+		<computePool descr="" name="default" policyOwner="local">
+		</computePool>
+		<uuidpoolPool assignmentOrder="default" descr="" name="default"
+			policyOwner="local" prefix="derived">
+		</uuidpoolPool>
+		<ippoolPool assignmentOrder="default" descr="" extManaged="internal"
+			guid="00000000-0000-0000-0000-000000000000" isNetBIOSEnabled="disabled"
+			name="ext-mgmt" policyOwner="local" supportsDHCP="disabled">
+		</ippoolPool>
+		<macpoolPool assignmentOrder="default" descr="default" name="default"
+			policyOwner="local">
+		</macpoolPool>
+		<fcpoolInitiators assignmentOrder="default" descr="default"
+			maxPortsPerNode="upto3" name="default" policyOwner="local"
+			purpose="port-wwn-assignment">
+		</fcpoolInitiators>
+		<computePsuPolicy descr="" policyOwner="local"
+			redundancy="n+1" />
+	</orgOrg>
+	<fabricEp>
+<!-- 		<fabricDceSrv id="A" name="">
+			<statsThresholdPolicy descr="" name="default"
+				policyOwner="local" />
+			<fabricDceSwSrv id="B" name=""></fabricDceSwSrv>
+			<fabricDceSwSrv id="A" name=""></fabricDceSwSrv>
+		</fabricDceSrv> -->
+		<fabricLanCloud macAging="mode-default" mode="end-host" vlanCompression="disabled">
+			<fabricEthLinkProfile cdpLinkPolicyName="" descr="" name="default" policyOwner="local" udldLinkPolicyName="default" />
+			<fabricUdldLinkPolicy adminState="disabled" descr="" mode="normal" name="default" policyOwner="local" />
+			<statsThresholdPolicy descr="" name="default" policyOwner="local" />
+			<extvmmVMNetworkSets />
+			<extvmmNetworkSets>
+			</extvmmNetworkSets>
+			<fabricVlan compressionType="included" defaultNet="no" id="1"
+				mcastPolicyName="" name="default" policyOwner="local" pubNwName=""
+				sharing="none">
+			</fabricVlan>
+			<mgmtInbandProfile defaultVlanName="" name="" poolName="" />
+			<vnicProfileSet>
+			</vnicProfileSet>
+			<flowctrlDefinition descr="" policyOwner="local">
+				<flowctrlItem name="default" prio="auto" rcv="off" snd="off" />
+			</flowctrlDefinition>
+			<qosclassDefinition descr="" policyOwner="local">
+				<qosclassEthBE mtu="normal" multicastOptimize="no" name="" weight="5" />
+				<qosclassEthClassified adminState="disabled" cos="5" drop="no-drop" mtu="normal" multicastOptimize="no" name="" priority="platinum" weight="10" />
+				<qosclassEthClassified adminState="disabled" cos="2" drop="drop" mtu="normal" multicastOptimize="no" name="" priority="silver" weight="8" />
+				<qosclassEthClassified adminState="disabled" cos="1" drop="drop" mtu="normal" multicastOptimize="no" name="" priority="bronze" weight="7" />
+				<qosclassEthClassified adminState="disabled" cos="4" drop="drop" mtu="normal" multicastOptimize="no" name="" priority="gold" weight="9" />
+				<qosclassFc cos="3" name="" weight="5" />
+			</qosclassDefinition>
+			<fabricEthLan id="B" name="" />
+			<fabricEthLan id="A" name="" />
+		</fabricLanCloud>
+		<fabricSanCloud mode="end-host">
+			<statsThresholdPolicy descr="" name="default"
+				policyOwner="local" />
+			<fabricVsan fcoeVlan="4048" id="1" name="default"
+				policyOwner="local" zoningState="disabled">
+			</fabricVsan>
+			<fabricFcSan id="B" name="" uplinkTrunking="disabled">
+			</fabricFcSan>
+			<fabricFcSan id="A" name="" uplinkTrunking="disabled">
+			</fabricFcSan>
+		</fabricSanCloud>
+	</fabricEp>
+	<topSystem descr="" name="" owner="" site="">
+		<commSvcEp descr="" name="" policyOwner="local">
+			<commDateTime policyOwner="local" descr="" name="" port="0"
+				adminState="enabled" timezone="">
+			</commDateTime>
+			<commDns adminState="enabled" descr="" domain="" name=""
+				policyOwner="local" port="0">
+			</commDns>
+		</commSvcEp>
+	</topSystem>
+	<callhomeEp adminState="off" alertThrottlingAdminState="off"
+		descr="" name="" policyOwner="local">
+	</callhomeEp>
+</topRoot>

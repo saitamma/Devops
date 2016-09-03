@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 19, 2015 5:40:55 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Biosvfusbportconfiguration" table="biosVfUSBPortConfiguration" >
+        <id name="primaryKey" type="java.lang.Integer">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="biosvprofile" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Biosvprofile" fetch="select">
+            <column name="FK_biosVProfile" not-null="true" />
+        </many-to-one>
+        <property name="childAction" type="string">
+            <column name="childAction" />
+        </property>
+        <property name="rn" type="string">
+            <column name="rn" />
+        </property>
+        <property name="vpPort6064emulation" type="string">
+            <column name="vpPort6064Emulation" />
+        </property>
+        <property name="vpUsbportFront" type="string">
+            <column name="vpUSBPortFront" />
+        </property>
+        <property name="vpUsbportInternal" type="string">
+            <column name="vpUSBPortInternal" />
+        </property>
+        <property name="vpUsbportKvm" type="string">
+            <column name="vpUSBPortKVM" />
+        </property>
+        <property name="vpUsbportRear" type="string">
+            <column name="vpUSBPortRear" />
+        </property>
+        <property name="vpUsbportSdcard" type="string">
+            <column name="vpUSBPortSDCard" />
+        </property>
+        <property name="vpUsbportVmedia" type="string">
+            <column name="vpUSBPortVMedia" />
+        </property>
+    </class>
+</hibernate-mapping>

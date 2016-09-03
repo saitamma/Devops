@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Lsserver" table="lsserver" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="orgorg" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Orgorg" fetch="select">
+            <column name="FK_orgOrg" not-null="true" />
+        </many-to-one>
+        <property name="policyOwner" type="string">
+            <column name="policyOwner" />
+        </property>
+        <property name="vconProfileName" type="string">
+            <column name="vconProfileName" />
+        </property>
+        <property name="uuid" type="string">
+            <column name="uuid" />
+        </property>
+        <property name="usrLbl" type="string">
+            <column name="usrLbl" />
+        </property>
+        <property name="type" type="string">
+            <column name="type_type" />
+        </property>
+        <property name="statsPolicyName" type="string">
+            <column name="statsPolicyName" />
+        </property>
+        <property name="srcTemplName" type="string">
+            <column name="srcTemplName" />
+        </property>
+        <property name="solPolicyName" type="string">
+            <column name="solPolicyName" />
+        </property>
+        <property name="scrubPolicyName" type="string">
+            <column name="scrubPolicyName" />
+        </property>
+        <property name="resolveRemote" type="string">
+            <column name="resolveRemote" />
+        </property>
+        <property name="powerPolicyName" type="string">
+            <column name="powerPolicyName" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="mgmtFwPolicyName" type="string">
+            <column name="mgmtFwPolicyName" />
+        </property>
+        <property name="mgmtAccessPolicyName" type="string">
+            <column name="mgmtAccessPolicyName" />
+        </property>
+        <property name="maintPolicyName" type="string">
+            <column name="maintPolicyName" />
+        </property>
+        <property name="localDiskPolicyName" type="string">
+            <column name="localDiskPolicyName" />
+        </property>
+        <property name="identPoolName" type="string">
+            <column name="identPoolName" />
+        </property>
+        <property name="hostFwPolicyName" type="string">
+            <column name="hostFwPolicyName" />
+        </property>
+        <property name="extIPState" type="string">
+            <column name="extIPState" />
+        </property>
+        <property name="extIPPoolName" type="string">
+            <column name="extIPPoolName" />
+        </property>
+        <property name="dynamicConPolicyName" type="string">
+            <column name="dynamicConPolicyName" />
+        </property>
+        <property name="descr" type="string">
+            <column name="descr" />
+        </property>
+        <property name="bootPolicyName" type="string">
+            <column name="bootPolicyName" />
+        </property>
+        <property name="biosProfileName" type="string">
+            <column name="biosProfileName" />
+        </property>
+        <property name="agentPolicyName" type="string">
+            <column name="agentPolicyName" />
+        </property>
+    </class>
+</hibernate-mapping>

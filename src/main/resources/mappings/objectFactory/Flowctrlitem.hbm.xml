@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2014 10:41:27 AM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Flowctrlitem" table="flowctrlitem" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="flowctrldefinition" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Flowctrldefinition" fetch="select">
+            <column name="FK_flowctrlDefinition" not-null="true" />
+        </many-to-one>
+        <property name="snd" type="string">
+            <column name="snd" />
+        </property>
+        <property name="rcv" type="string">
+            <column name="rcv" />
+        </property>
+        <property name="prio" type="string">
+            <column name="prio" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+    </class>
+</hibernate-mapping>

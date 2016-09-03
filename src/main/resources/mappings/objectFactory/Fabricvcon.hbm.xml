@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Fabricvcon" table="fabricvcon" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="lsserver" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Lsserver" fetch="select">
+            <column name="FK_lsServer" not-null="true" />
+        </many-to-one>
+        <property name="transport" type="string">
+            <column name="transport" />
+        </property>
+        <property name="share" type="string">
+            <column name="share_share" />
+        </property>
+        <property name="select" type="string">
+            <column name="select_select" />
+        </property>
+        <property name="placement" type="string">
+            <column name="placement" />
+        </property>
+        <property name="instType" type="string">
+            <column name="instType" />
+        </property>
+        <property name="id" type="string">
+            <column name="id" />
+        </property>
+        <property name="fabric" type="string">
+            <column name="fabric" />
+        </property>
+    </class>
+</hibernate-mapping>

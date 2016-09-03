@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:encryption="http://www.jasypt.org/schema/encryption"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.jasypt.org/schema/encryption http://www.jasypt.org/schema/encryption/jasypt-spring31-encryption-1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+    <!-- Uncomment and your base-package here:
+         <context:component-scan
+            base-package="org.springframework.samples.web"/>  -->
+
+
+ 	<!-- Scans within the base package of the application for @Components to configure as beans -->
+	<!-- @Controller, @Service, @Configuration, etc. -->
+	<context:component-scan base-package="com.cisco.ca.cstg.pdi" />
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+		
+
+	<mvc:interceptors>
+  		<bean class="com.cisco.ca.cstg.pdi.interceptor.LicensePresenceInterceptor" />
+	</mvc:interceptors>
+	<context:annotation-config />
+	
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	<!-- Hibernate configuration -->
+	<bean id="hibernateSessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="packagesToScan" value="com.cisco.ca.cstg.pdi.pojos"></property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					com.cisco.ca.cstg.pdi.utils.MySqlDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.c3p0.minPoolSize">5</prop>
+				<prop key="hibernate.c3p0.maxPoolSize">20</prop>
+				<prop key="hibernate.c3p0.timeout">600</prop>
+				<prop key="hibernate.c3p0.max_statement">50</prop>
+				<prop key="hibernate.c3p0.testConnectionOnCheckout">false</prop>
+			</props>
+		</property>
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>
+	
+	<!-- Configure transaction manager -->	
+	<bean class="org.springframework.orm.hibernate3.HibernateTransactionManager" id="transactionManager">
+		<property name="sessionFactory" ref="hibernateSessionFactory"></property>
+	</bean>	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+            destroy-method="close">
+	    <property name="driverClassName">
+	      <value>com.mysql.jdbc.Driver</value>
+	    </property>
+	
+	    <property name="url">
+	     <value>jdbc:mysql://ucsadait-ovzuj53idev-2-ucsadait.cloudapps.cisco.com:64436/ucsada_dev_testcase</value>
+	    </property>
+	    <property name="username">
+	      <value>adminDfCdmij</value>
+	    </property>
+	    <property name="password">
+	     <value>p2X67vd9thjg</value>
+	    </property>
+	    <property name="validationQuery">
+	    	<value>SELECT 1</value>
+	    </property>
+	   <!--  <property name="defaultAutoCommit" value="false" /> -->
+	</bean>
+	
+	<!-- File Upload size limit-->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	<!-- Max size in bytes. -->
+	<property name="maxUploadSize" value="100000000"/>
+	</bean>	
+</beans>

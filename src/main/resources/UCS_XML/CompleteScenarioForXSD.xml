@@ -1,0 +1,1065 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<topRoot>
+	<orgOrg name="root" descr="">
+		<fcpoolInitiators policyOwner="local" descr=""
+			purpose="node-wwn-assignment" name="node-default" maxPortsPerNode="upto3"
+			assignmentOrder="default">
+		</fcpoolInitiators>
+		<computePool policyOwner="local" descr="default" name="default">
+		</computePool>
+		<uuidpoolPool policyOwner="local" descr="" prefix="derived"
+			name="default" assignmentOrder="default">
+		</uuidpoolPool>
+		<ippoolPool policyOwner="local" descr="" supportsDHCP="disabled"
+			name="ext-mgmt" isNetBIOSEnabled="disabled"
+			guid="00000000-0000-0000-0000-000000000000" extManaged="internal"
+			assignmentOrder="default">
+			<ippoolBlock to="172.21.53.22" subnet="255.255.255.0"
+				primDns="0.0.0.0" from="172.21.53.20" defGw="172.21.53.1" />
+		</ippoolPool>
+		<macpoolPool policyOwner="local" descr="" name="default"
+			assignmentOrder="default">
+		</macpoolPool>
+		<fcpoolInitiators policyOwner="local" descr=""
+			purpose="port-wwn-assignment" name="default" maxPortsPerNode="upto3"
+			assignmentOrder="default">
+		</fcpoolInitiators>
+		<computePsuPolicy policyOwner="local" descr=""
+			redundancy="n+1"></computePsuPolicy>
+		<macpoolPool policyOwner="local" descr="MAC1" name="MAC1"
+			assignmentOrder="default">
+			<macpoolBlock to="00:25:B5:00:00:0B" from="00:25:B5:00:00:00" />
+		</macpoolPool>
+		<macpoolPool policyOwner="local" descr="MAC2" name="MAC2"
+			assignmentOrder="default">
+			<macpoolBlock to="00:25:B5:00:00:A9" from="00:25:B5:00:00:A0" />
+		</macpoolPool>
+		<vnicLanConnTempl policyOwner="local" descr="nic0"
+			target="Adapter" statsPolicyName="default" pinToGroupName=""
+			templType="updating-template" switchId="A" qosPolicyName="QoS1"
+			nwCtrlPolicyName="NetworkCntrlPol1" name="nic0" mtu="1500"
+			identPoolName="MAC1">
+			<vnicEtherIf defaultNet="no" name="vlan100" />
+			<vnicEtherIf defaultNet="no" name="vlan101" />
+		</vnicLanConnTempl>
+		<vnicLanConnTempl policyOwner="local" descr="nic1"
+			target="VM" statsPolicyName="default" pinToGroupName=""
+			templType="initial-template" switchId="B" qosPolicyName="QoS2"
+			nwCtrlPolicyName="NetCntrlPol2" name="nic1" mtu="1500" identPoolName="MAC2">
+			<vnicEtherIf defaultNet="no" name="vlan102" />
+			<vnicEtherIf defaultNet="no" name="vlan103" />
+		</vnicLanConnTempl>
+		<vnicSanConnTempl policyOwner="local" descr="HBA1"
+			switchId="A" statsPolicyName="default" pinToGroupName=""
+			templType="updating-template" qosPolicyName="QoS1" name="HBA1"
+			maxDataFieldSize="2048" identPoolName="WWPN1">
+			<vnicFcIf name="VSAN2" />
+		</vnicSanConnTempl>
+		<vnicSanConnTempl policyOwner="local" descr="HBA2"
+			switchId="B" statsPolicyName="default" pinToGroupName=""
+			templType="initial-template" qosPolicyName="QoS2" name="HBA2"
+			maxDataFieldSize="2048" identPoolName="WWPN2">
+			<vnicFcIf name="VSAN3" />
+		</vnicSanConnTempl>
+		<fcpoolInitiators policyOwner="local" descr="WWNN1"
+			purpose="node-wwn-assignment" name="WWNN1" maxPortsPerNode="upto3"
+			assignmentOrder="default">
+			<fcpoolBlock to="20:00:00:25:B5:00:00:0B" from="20:00:00:25:B5:00:00:00" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:00:00"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:00:01"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:00:02"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:00:03"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:00:04"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:00:05"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:00:06"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:00:07"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:00:08"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:00:09"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:00:0A"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:00:0B"
+				descr="" />
+		</fcpoolInitiators>
+		<fcpoolInitiators policyOwner="local" descr="WWNN2"
+			purpose="node-wwn-assignment" name="WWNN2" maxPortsPerNode="upto3"
+			assignmentOrder="default">
+			<fcpoolBlock to="20:00:00:25:B5:00:A0:09" from="20:00:00:25:B5:00:A0:00" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:A0:00"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:A0:01"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:A0:02"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:A0:03"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:A0:04"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:A0:05"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:A0:06"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:A0:07"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:A0:08"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:A0:09"
+				descr="" />
+		</fcpoolInitiators>
+		<fcpoolInitiators policyOwner="local" descr="WWPN1"
+			purpose="port-wwn-assignment" name="WWPN1" maxPortsPerNode="upto3"
+			assignmentOrder="default">
+			<fcpoolBlock to="20:00:00:25:B5:00:00:01" from="20:00:00:25:B5:00:00:00" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:00:00"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:00:01"
+				descr="" />
+		</fcpoolInitiators>
+		<fcpoolInitiators policyOwner="local" descr="WWPN2"
+			purpose="port-wwn-assignment" name="WWPN2" maxPortsPerNode="upto3"
+			assignmentOrder="default">
+			<fcpoolBlock to="20:00:00:25:B5:00:A0:03" from="20:00:00:25:B5:00:A0:00" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:A0:00"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:A0:01"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:A0:02"
+				descr="" />
+			<fcpoolInitiator name="" id="20:00:00:25:B5:00:A0:03"
+				descr="" />
+		</fcpoolInitiators>
+		<uuidpoolPool policyOwner="local" descr="UUID Pool 1"
+			prefix="00000000-0001-0000" name="UUID_1" assignmentOrder="default">
+			<uuidpoolBlock to="0000-00000000000C" from="0000-000000000001" />
+		</uuidpoolPool>
+		<uuidpoolPool policyOwner="local" descr="UUID Pool 2"
+			prefix="00000000-0001-0000" name="UUID_2" assignmentOrder="default">
+			<uuidpoolBlock to="0000-000000000A0A" from="0000-000000000A01" />
+		</uuidpoolPool>
+		<storageLocalDiskConfigPolicy
+			policyOwner="local" descr="Disk Policy 1" protectConfig="no"
+			mode="raid-mirrored" flexFlashState="disable"
+			flexFlashRAIDReportingState="disable" name="LocalDisk1" />
+		<storageLocalDiskConfigPolicy
+			policyOwner="local" descr="Disk Policy 2" protectConfig="yes"
+			mode="any-configuration" flexFlashState="disable"
+			flexFlashRAIDReportingState="disable" name="LocalDisk2" />
+		<computePool policyOwner="local" descr="Server Pool 1"
+			name="SerPool1" />
+		<computePool policyOwner="local" descr="Server Pool 2"
+			name="SerPool2" />
+		<computeQual policyOwner="local" descr="SP Qualifier 1"
+			name="SerPool_Q1">
+			<computeChassisQual minId="2" maxId="4">
+				<computeSlotQual minId="5" maxId="8" />
+			</computeChassisQual>
+		</computeQual>
+		<computeQual policyOwner="local" descr="SP Qualifier 2"
+			name="SerPool_Q2">
+			<computeChassisQual minId="1" maxId="1">
+				<computeSlotQual minId="1" maxId="4" />
+			</computeChassisQual>
+		</computeQual>
+		<computePoolingPolicy policyOwner="local"
+			descr="Server pool policy" qualifier="SerPool_Q2" poolDn="org-root/compute-pool-SerPool1"
+			name="SerPool_P1" />
+		<computePoolingPolicy policyOwner="local"
+			descr="Server pool policy" qualifier="SerPool_Q1" poolDn="org-root/compute-pool-SerPool2"
+			name="SerPool_P2" />
+		<lsServer policyOwner="local" vconProfileName="" uuid="derived"
+			usrLbl="" type="instance" statsPolicyName="default" srcTemplName="Template_1"
+			solPolicyName="" scrubPolicyName="" resolveRemote="yes"
+			powerPolicyName="default" name="SP_1" mgmtFwPolicyName=""
+			mgmtAccessPolicyName="" maintPolicyName="" localDiskPolicyName="LocalDisk1"
+			identPoolName="UUID_1" hostFwPolicyName="" extIPState="none"
+			extIPPoolName="ext-mgmt" dynamicConPolicyName="" descr="SP Description1"
+			bootPolicyName="Boot-P1" biosProfileName="" agentPolicyName="">
+			<lsRequirement restrictMigration="no" qualifier=""
+				name="SerPool1" />
+			<vnicFc switchId="A" statsPolicyName="default" order="1"
+				adminVcon="any" qosPolicyName="" pinToGroupName="" persBind="disabled"
+				nwTemplName="HBA1" maxDataFieldSize="2048" identPoolName="WWPN1"
+				adaptorProfileName="" persBindClear="no" name="HBA1">
+				<vnicFcIf name="vsanA" />
+			</vnicFc>
+			<vnicFc switchId="A" statsPolicyName="default" order="1"
+				adminVcon="any" qosPolicyName="" pinToGroupName="" persBind="disabled"
+				nwTemplName="HBA2" maxDataFieldSize="2048" identPoolName="WWPN2"
+				adaptorProfileName="" persBindClear="no" name="HBA2">
+				<vnicFcIf name="vsanA" />
+			</vnicFc>
+			<lsVConAssign vnicName="nic0" transport="ethernet"
+				order="2" adminVcon="any" />
+			<vnicEther statsPolicyName="default" order="2" adminVcon="any"
+				switchId="B" qosPolicyName="" pinToGroupName="" nwTemplName="nic0"
+				nwCtrlPolicyName="" mtu="1500" identPoolName="MAC1"
+				adaptorProfileName="" name="nic0">
+				<vnicEtherIf defaultNet="no" name="vlan100" />
+				<vnicEtherIf defaultNet="no" name="vlan101" />
+			</vnicEther>
+			<lsVConAssign vnicName="HBA2" transport="fc" order="1"
+				adminVcon="any" />
+			<vnicConnDef lanConnPolicyName="" />
+			<lsVersionBeh vnicOrder="dynamic-all-last" vnicMap="physical-cap-first"
+				vconMap="round-robin" pciEnum="static-zero-func" />
+			<lsServerExtension guid="db8f8cdb-4d0b-430b-9c8f-c1c43ba17f48" />
+			<vnicFcNode identPoolName="WWNN1" addr="pool-derived" />
+			<fabricVCon transport="ethernet,fc" share="shared" select="all"
+				placement="physical" instType="auto" id="1" fabric="NONE" />
+			<fabricVCon transport="ethernet,fc" share="shared" select="all"
+				placement="physical" instType="auto" id="2" fabric="NONE" />
+			<fabricVCon transport="ethernet,fc" share="shared" select="all"
+				placement="physical" instType="auto" id="3" fabric="NONE" />
+			<fabricVCon transport="ethernet,fc" share="shared" select="all"
+				placement="physical" instType="auto" id="4" fabric="NONE" />
+			<lsPower state="up" />
+		</lsServer>
+		<lsServer policyOwner="local" vconProfileName="" uuid="derived"
+			usrLbl="" type="instance" statsPolicyName="default" srcTemplName="Template_2"
+			solPolicyName="" scrubPolicyName="" resolveRemote="yes"
+			powerPolicyName="default" name="SP_2" mgmtFwPolicyName=""
+			mgmtAccessPolicyName="" maintPolicyName="" localDiskPolicyName="LocalDisk2"
+			identPoolName="UUID_2" hostFwPolicyName="" extIPState="none"
+			extIPPoolName="ext-mgmt" dynamicConPolicyName="" descr="SP Description2"
+			bootPolicyName="Boot-P2" biosProfileName="" agentPolicyName="">
+			<lsRequirement restrictMigration="no" qualifier=""
+				name="SerPool2" />
+			<vnicFc switchId="A" statsPolicyName="default" order="1"
+				adminVcon="any" qosPolicyName="" pinToGroupName="" persBind="disabled"
+				nwTemplName="HBA1" maxDataFieldSize="2048" identPoolName="WWPN1"
+				adaptorProfileName="" persBindClear="no" name="HBA1">
+				<vnicFcIf name="vsanA" />
+			</vnicFc>
+			<lsVConAssign vnicName="nic0" transport="ethernet"
+				order="2" adminVcon="any" />
+			<vnicEther statsPolicyName="default" order="2" adminVcon="any"
+				switchId="B" qosPolicyName="" pinToGroupName="" nwTemplName="nic0"
+				nwCtrlPolicyName="" mtu="1500" identPoolName="MAC1"
+				adaptorProfileName="" name="nic0">
+				<vnicEtherIf defaultNet="no" name="vlan100" />
+				<vnicEtherIf defaultNet="no" name="vlan101" />
+			</vnicEther>
+			<lsVConAssign vnicName="nic1" transport="ethernet"
+				order="2" adminVcon="any" />
+			<vnicEther statsPolicyName="default" order="2" adminVcon="any"
+				switchId="B" qosPolicyName="" pinToGroupName="" nwTemplName="nic1"
+				nwCtrlPolicyName="" mtu="1500" identPoolName="MAC2"
+				adaptorProfileName="" name="nic1">
+				<vnicEtherIf defaultNet="no" name="vlan102" />
+				<vnicEtherIf defaultNet="no" name="vlan103" />
+			</vnicEther>
+			<lsVConAssign vnicName="HBA1" transport="fc" order="1"
+				adminVcon="any" />
+			<vnicConnDef sanConnPolicyName="ConnPol1"
+				lanConnPolicyName="" />
+			<lsVersionBeh vnicOrder="dynamic-all-last" vnicMap="physical-cap-first"
+				vconMap="round-robin" pciEnum="static-zero-func" />
+			<lsServerExtension guid="db8f8cdb-4d0b-430b-9c8f-c1c43ba17f48" />
+			<vnicFcNode identPoolName="WWNN1" addr="pool-derived" />
+			<fabricVCon transport="ethernet,fc" share="shared" select="all"
+				placement="physical" instType="auto" id="1" fabric="NONE" />
+			<fabricVCon transport="ethernet,fc" share="shared" select="all"
+				placement="physical" instType="auto" id="2" fabric="NONE" />
+			<fabricVCon transport="ethernet,fc" share="shared" select="all"
+				placement="physical" instType="auto" id="3" fabric="NONE" />
+			<fabricVCon transport="ethernet,fc" share="shared" select="all"
+				placement="physical" instType="auto" id="4" fabric="NONE" />
+			<lsPower state="up" />
+		</lsServer>
+		<lsServer policyOwner="local" vconProfileName="" uuid="derived"
+			usrLbl="" type="updating-template" statsPolicyName="default"
+			srcTemplName="" solPolicyName="" scrubPolicyName="" resolveRemote="yes"
+			powerPolicyName="default" name="Template_1" mgmtFwPolicyName=""
+			mgmtAccessPolicyName="" maintPolicyName="" localDiskPolicyName="LocalDisk1"
+			identPoolName="UUID_1" hostFwPolicyName="" extIPState="none"
+			extIPPoolName="ext-mgmt" dynamicConPolicyName=""
+			descr="Profile_Template Desc 1" bootPolicyName="Boot-P1"
+			biosProfileName="" agentPolicyName="">
+			<lsRequirement restrictMigration="no" qualifier=""
+				name="SerPool1" />
+			<vnicFc switchId="A" statsPolicyName="default" order="1"
+				adminVcon="any" qosPolicyName="" pinToGroupName="" persBind="disabled"
+				nwTemplName="HBA1" maxDataFieldSize="2048" identPoolName="WWPN1"
+				adaptorProfileName="" persBindClear="no" name="HBA1">
+				<vnicFcIf name="vsanA" />
+			</vnicFc>
+			<vnicFc switchId="A" statsPolicyName="default" order="1"
+				adminVcon="any" qosPolicyName="" pinToGroupName="" persBind="disabled"
+				nwTemplName="HBA2" maxDataFieldSize="2048" identPoolName="WWPN2"
+				adaptorProfileName="" persBindClear="no" name="HBA2">
+				<vnicFcIf name="vsanA" />
+			</vnicFc>
+			<lsVConAssign vnicName="nic0" transport="ethernet"
+				order="2" adminVcon="any" />
+			<vnicEther statsPolicyName="default" order="2" adminVcon="any"
+				switchId="B" qosPolicyName="" pinToGroupName="" nwTemplName="nic0"
+				nwCtrlPolicyName="" mtu="1500" identPoolName="MAC1"
+				adaptorProfileName="" name="nic0">
+				<vnicEtherIf defaultNet="no" name="vlan100" />
+				<vnicEtherIf defaultNet="no" name="vlan101" />
+			</vnicEther>
+			<lsVConAssign vnicName="HBA2" transport="fc" order="1"
+				adminVcon="any" />
+			<vnicConnDef lanConnPolicyName="" />
+			<vnicFcNode identPoolName="WWNN1" addr="pool-derived" />
+			<fabricVCon transport="ethernet,fc" share="shared" select="all"
+				placement="physical" instType="auto" id="1" fabric="NONE" />
+			<fabricVCon transport="ethernet,fc" share="shared" select="all"
+				placement="physical" instType="auto" id="2" fabric="NONE" />
+			<fabricVCon transport="ethernet,fc" share="shared" select="all"
+				placement="physical" instType="auto" id="3" fabric="NONE" />
+			<fabricVCon transport="ethernet,fc" share="shared" select="all"
+				placement="physical" instType="auto" id="4" fabric="NONE" />
+			<lsPower state="up" />
+		</lsServer>
+		<lsServer policyOwner="local" vconProfileName="" uuid="derived"
+			usrLbl="" type="updating-template" statsPolicyName="default"
+			srcTemplName="" solPolicyName="" scrubPolicyName="" resolveRemote="yes"
+			powerPolicyName="default" name="Template_2" mgmtFwPolicyName=""
+			mgmtAccessPolicyName="" maintPolicyName="" localDiskPolicyName="LocalDisk2"
+			identPoolName="UUID_2" hostFwPolicyName="" extIPState="none"
+			extIPPoolName="ext-mgmt" dynamicConPolicyName=""
+			descr="Profile_Template Desc 2" bootPolicyName="Boot-P2"
+			biosProfileName="" agentPolicyName="">
+			<lsRequirement restrictMigration="no" qualifier=""
+				name="SerPool2" />
+			<vnicFc switchId="A" statsPolicyName="default" order="1"
+				adminVcon="any" qosPolicyName="" pinToGroupName="" persBind="disabled"
+				nwTemplName="HBA1" maxDataFieldSize="2048" identPoolName="WWPN1"
+				adaptorProfileName="" persBindClear="no" name="HBA1">
+				<vnicFcIf name="vsanA" />
+			</vnicFc>
+			<lsVConAssign vnicName="nic0" transport="ethernet"
+				order="2" adminVcon="any" />
+			<vnicEther statsPolicyName="default" order="2" adminVcon="any"
+				switchId="B" qosPolicyName="" pinToGroupName="" nwTemplName="nic0"
+				nwCtrlPolicyName="" mtu="1500" identPoolName="MAC1"
+				adaptorProfileName="" name="nic0">
+				<vnicEtherIf defaultNet="no" name="vlan100" />
+				<vnicEtherIf defaultNet="no" name="vlan101" />
+			</vnicEther>
+			<lsVConAssign vnicName="nic1" transport="ethernet"
+				order="2" adminVcon="any" />
+			<vnicEther statsPolicyName="default" order="2" adminVcon="any"
+				switchId="B" qosPolicyName="" pinToGroupName="" nwTemplName="nic1"
+				nwCtrlPolicyName="" mtu="1500" identPoolName="MAC2"
+				adaptorProfileName="" name="nic1">
+				<vnicEtherIf defaultNet="no" name="vlan102" />
+				<vnicEtherIf defaultNet="no" name="vlan103" />
+			</vnicEther>
+			<lsVConAssign vnicName="HBA1" transport="fc" order="1"
+				adminVcon="any" />
+			<vnicConnDef sanConnPolicyName="ConnPol1"
+				lanConnPolicyName="" />
+			<vnicFcNode identPoolName="WWNN1" addr="pool-derived" />
+			<fabricVCon transport="ethernet,fc" share="shared" select="all"
+				placement="physical" instType="auto" id="1" fabric="NONE" />
+			<fabricVCon transport="ethernet,fc" share="shared" select="all"
+				placement="physical" instType="auto" id="2" fabric="NONE" />
+			<fabricVCon transport="ethernet,fc" share="shared" select="all"
+				placement="physical" instType="auto" id="3" fabric="NONE" />
+			<fabricVCon transport="ethernet,fc" share="shared" select="all"
+				placement="physical" instType="auto" id="4" fabric="NONE" />
+			<lsPower state="up" />
+		</lsServer>
+		<lsbootPolicy policyOwner="local" descr="Boot Policy 1"
+			rebootOnUpdate="yes" purpose="operational" enforceVnicName="no"
+			bootMode="uefi" name="Boot-P1">
+			<lsbootBootSecurity rn="boot-security"
+				childAction="deleteNonPresent" secureBoot="no" />
+			<lsbootSan order="2">
+				<lsbootSanCatSanImage vnicName="HBA1" type="primary">
+					<lsbootSanCatSanImagePath wwn="20:00:00:25:B5:00:00:00"
+						type="primary" lun="0" />
+					<lsbootSanCatSanImagePath wwn="20:00:00:25:B5:00:00:02"
+						type="secondary" lun="2" />
+				</lsbootSanCatSanImage>
+				<lsbootSanCatSanImage vnicName="HBA2" type="secondary">
+					<lsbootSanCatSanImagePath wwn="20:00:00:25:B5:00:00:01"
+						type="primary" lun="1" />
+					<lsbootSanCatSanImagePath wwn="20:00:00:25:B5:00:00:03"
+						type="secondary" lun="3" />
+				</lsbootSanCatSanImage>
+			</lsbootSan>
+			<lsbootLan prot="pxe" order="1">
+				<lsbootLanImagePath vnicName="nic0" type="primary"
+					provSrvPolicyName="" imgSecPolicyName="" imgPolicyName=""
+					iSCSIVnicName="" bootIpPolicyName="" />
+				<lsbootLanImagePath vnicName="nic1" type="secondary"
+					provSrvPolicyName="" imgSecPolicyName="" imgPolicyName=""
+					iSCSIVnicName="" bootIpPolicyName="" />
+			</lsbootLan>
+		</lsbootPolicy>
+		<lsbootPolicy policyOwner="local" descr="Boot Policy 2"
+			rebootOnUpdate="no" purpose="operational" enforceVnicName="yes"
+			bootMode="legacy" name="Boot-P2">
+			<lsbootStorage order="1">
+				<lsbootLocalStorage>
+					<lsbootLocalHddImage order="2" />
+					<lsbootUsbFlashStorageImage order="1" />
+					<lsbootUsbInternalImage order="4" />
+					<lsbootUsbExternalImage order="3" />
+				</lsbootLocalStorage>
+				<lsbootLocalStorage>
+					<lsbootLocalHddImage order="2" />
+					<lsbootUsbFlashStorageImage order="1" />
+					<lsbootUsbInternalImage order="4" />
+					<lsbootUsbExternalImage order="3" />
+				</lsbootLocalStorage>
+				<lsbootLocalStorage>
+					<lsbootLocalHddImage order="2" />
+					<lsbootUsbFlashStorageImage order="1" />
+					<lsbootUsbInternalImage order="4" />
+					<lsbootUsbExternalImage order="3" />
+				</lsbootLocalStorage>
+				<lsbootLocalStorage>
+					<lsbootLocalHddImage order="2" />
+					<lsbootUsbFlashStorageImage order="1" />
+					<lsbootUsbInternalImage order="4" />
+					<lsbootUsbExternalImage order="3" />
+				</lsbootLocalStorage>
+			</lsbootStorage>
+		</lsbootPolicy>
+		<nwctrlDefinition policyOwner="local" descr="NetworkCntrlPol1"
+			uplinkFailAction="link-down" name="NetworkCntrlPol1" macRegisterMode="only-native-vlan"
+			cdp="disabled">
+			<dpsecMac name="" policyOwner="local" descr="" forge="allow" />
+		</nwctrlDefinition>
+		<nwctrlDefinition policyOwner="local" descr="NetCntrlPol2"
+			uplinkFailAction="warning" name="NetCntrlPol2" macRegisterMode="all-host-vlans"
+			cdp="enabled">
+			<dpsecMac name="" policyOwner="local" descr="" forge="deny" />
+		</nwctrlDefinition>
+		<epqosDefinition policyOwner="local" descr="" name="QoS1">
+			<epqosEgress name="" rate="line-rate" prio="best-effort"
+				hostControl="none" burst="10240" />
+		</epqosDefinition>
+		<epqosDefinition policyOwner="local" descr="" name="QoS2">
+			<epqosEgress name="" rate="333" prio="gold" hostControl="full"
+				burst="1024" />
+		</epqosDefinition>
+		<adaptorHostFcIfProfile policyOwner="local"
+			descr="Linux" name="Linux">
+			<adaptorFcCdbWorkQueueProfile rn="fc-cdb-work-q"
+				ringSize="512" count="1" />
+			<adaptorFcPortPLogiProfile rn="fc-port-flogi"
+				timeout="20000" retries="8" />
+			<adaptorFcPortFLogiProfile timeout="4000"
+				retries="8" />
+			<adaptorFcErrorRecoveryProfile rn="fc-err-rec"
+				portDownTimeout="30000" portDownIoRetryCount="30" linkDownTimeout="30000"
+				fcpErrorRecovery="disabled" />
+			<adaptorFcWorkQueueProfile rn="fc-work-q"
+				ringSize="64" />
+			<adaptorFcRecvQueueProfile rn="fc-rcv-q"
+				ringSize="64" />
+			<adaptorFcPortProfile rn="fc-port"
+				lunsPerTarget="256" ioThrottleCount="256" />
+			<adaptorFcInterruptProfile rn="fc-int"
+				mode="msi-x" />
+		</adaptorHostFcIfProfile>
+		<adaptorHostFcIfProfile policyOwner="local"
+			descr="Solaris" name="Solaris">
+			<adaptorFcCdbWorkQueueProfile rn="fc-cdb-work-q"
+				ringSize="512" count="1" />
+			<adaptorFcPortPLogiProfile rn="fc-port-flogi"
+				timeout="20000" retries="8" />
+			<adaptorFcPortFLogiProfile timeout="4000"
+				retries="8" />
+			<adaptorFcErrorRecoveryProfile rn="fc-err-rec"
+				portDownTimeout="30000" portDownIoRetryCount="30" linkDownTimeout="30000"
+				fcpErrorRecovery="disabled" />
+			<adaptorFcWorkQueueProfile rn="fc-work-q"
+				ringSize="64" />
+			<adaptorFcRecvQueueProfile rn="fc-rcv-q"
+				ringSize="64" />
+			<adaptorFcPortProfile rn="fc-port"
+				lunsPerTarget="256" ioThrottleCount="256" />
+			<adaptorFcInterruptProfile rn="fc-int"
+				mode="msi-x" />
+		</adaptorHostFcIfProfile>
+		<adaptorHostFcIfProfile policyOwner="local"
+			descr="VMWare" name="VMWare">
+			<adaptorFcCdbWorkQueueProfile rn="fc-cdb-work-q"
+				ringSize="512" count="1" />
+			<adaptorFcPortPLogiProfile rn="fc-port-flogi"
+				timeout="20000" retries="8" />
+			<adaptorFcPortFLogiProfile timeout="4000"
+				retries="8" />
+			<adaptorFcErrorRecoveryProfile rn="fc-err-rec"
+				portDownTimeout="30000" portDownIoRetryCount="30" linkDownTimeout="30000"
+				fcpErrorRecovery="disabled" />
+			<adaptorFcWorkQueueProfile rn="fc-work-q"
+				ringSize="64" />
+			<adaptorFcRecvQueueProfile rn="fc-rcv-q"
+				ringSize="64" />
+			<adaptorFcPortProfile rn="fc-port"
+				lunsPerTarget="256" ioThrottleCount="256" />
+			<adaptorFcInterruptProfile rn="fc-int"
+				mode="msi-x" />
+		</adaptorHostFcIfProfile>
+		<adaptorHostFcIfProfile policyOwner="local"
+			descr="Windows" name="Windows">
+			<adaptorFcCdbWorkQueueProfile rn="fc-cdb-work-q"
+				ringSize="512" count="1" />
+			<adaptorFcPortPLogiProfile rn="fc-port-flogi"
+				timeout="20000" retries="8" />
+			<adaptorFcPortFLogiProfile timeout="4000"
+				retries="8" />
+			<adaptorFcErrorRecoveryProfile rn="fc-err-rec"
+				portDownTimeout="30000" portDownIoRetryCount="30" linkDownTimeout="30000"
+				fcpErrorRecovery="disabled" />
+			<adaptorFcWorkQueueProfile rn="fc-work-q"
+				ringSize="64" />
+			<adaptorFcRecvQueueProfile rn="fc-rcv-q"
+				ringSize="64" />
+			<adaptorFcPortProfile rn="fc-port"
+				lunsPerTarget="256" ioThrottleCount="256" />
+			<adaptorFcInterruptProfile rn="fc-int"
+				mode="msi-x" />
+		</adaptorHostFcIfProfile>
+		<adaptorHostFcIfProfile policyOwner="local"
+			descr="default" name="default">
+			<adaptorFcCdbWorkQueueProfile rn="fc-cdb-work-q"
+				ringSize="512" count="1" />
+			<adaptorFcPortPLogiProfile rn="fc-port-flogi"
+				timeout="20000" retries="8" />
+			<adaptorFcPortFLogiProfile timeout="4000"
+				retries="8" />
+			<adaptorFcErrorRecoveryProfile rn="fc-err-rec"
+				portDownTimeout="30000" portDownIoRetryCount="30" linkDownTimeout="30000"
+				fcpErrorRecovery="disabled" />
+			<adaptorFcWorkQueueProfile rn="fc-work-q"
+				ringSize="64" />
+			<adaptorFcRecvQueueProfile rn="fc-rcv-q"
+				ringSize="64" />
+			<adaptorFcPortProfile rn="fc-port"
+				lunsPerTarget="256" ioThrottleCount="256" />
+			<adaptorFcInterruptProfile rn="fc-int"
+				mode="msi-x" />
+		</adaptorHostFcIfProfile>
+		<adaptorHostFcIfProfile policyOwner="local"
+			descr="AdapPol1" name="AdapPol1">
+			<adaptorFcCdbWorkQueueProfile rn="fc-cdb-work-q"
+				ringSize="512" count="1" />
+			<adaptorFcPortPLogiProfile rn="fc-port-flogi"
+				timeout="20001" retries="8" />
+			<adaptorFcPortFLogiProfile timeout="4001"
+				retries="8" />
+			<adaptorFcErrorRecoveryProfile rn="fc-err-rec"
+				portDownTimeout="30001" portDownIoRetryCount="31" linkDownTimeout="30001"
+				fcpErrorRecovery="disabled" />
+			<adaptorFcWorkQueueProfile rn="fc-work-q"
+				ringSize="64" />
+			<adaptorFcRecvQueueProfile rn="fc-rcv-q"
+				ringSize="64" />
+			<adaptorFcPortProfile rn="fc-port"
+				lunsPerTarget="257" ioThrottleCount="257" />
+			<adaptorFcInterruptProfile rn="fc-int"
+				mode="msi" />
+		</adaptorHostFcIfProfile>
+		<adaptorHostFcIfProfile policyOwner="local"
+			descr="AdapPol2" name="AdapPol2">
+			<adaptorFcCdbWorkQueueProfile rn="fc-cdb-work-q"
+				ringSize="512" count="1" />
+			<adaptorFcPortPLogiProfile rn="fc-port-flogi"
+				timeout="20000" retries="8" />
+			<adaptorFcPortFLogiProfile timeout="4000"
+				retries="8" />
+			<adaptorFcErrorRecoveryProfile rn="fc-err-rec"
+				portDownTimeout="30000" portDownIoRetryCount="30" linkDownTimeout="30000"
+				fcpErrorRecovery="disabled" />
+			<adaptorFcWorkQueueProfile rn="fc-work-q"
+				ringSize="64" />
+			<adaptorFcRecvQueueProfile rn="fc-rcv-q"
+				ringSize="64" />
+			<adaptorFcPortProfile rn="fc-port"
+				lunsPerTarget="256" ioThrottleCount="256" />
+			<adaptorFcInterruptProfile rn="fc-int"
+				mode="msi-x" />
+		</adaptorHostFcIfProfile>
+		<vnicSanConnPolicy policyOwner="local" descr="ConnPol1"
+			name="ConnPol1">
+			<vnicFc switchId="A" statsPolicyName="default" order="1"
+				adminVcon="any" qosPolicyName="QoS1" pinToGroupName="" persBind="disabled"
+				nwTemplName="HBA1" maxDataFieldSize="2048" identPoolName="WWPN1"
+				addr="derived" adaptorProfileName="AdapPol1" persBindClear="no"
+				name="vHBA1">
+				<vnicFcIf rn="if-default" name="VSAN2" />
+			</vnicFc>
+			<vnicFcNode identPoolName="WWNN1" addr="pool-derived" />
+		</vnicSanConnPolicy>
+		<vnicSanConnPolicy policyOwner="local" descr="ConnPol2"
+			name="ConnPol2">
+			<vnicFc switchId="A" statsPolicyName="default" order="1"
+				adminVcon="any" qosPolicyName="QoS1" pinToGroupName="" persBind="disabled"
+				nwTemplName="HBA1" maxDataFieldSize="2048" identPoolName="WWPN1"
+				addr="derived" adaptorProfileName="AdapPol1" persBindClear="no"
+				name="vHBA1">
+				<vnicFcIf rn="if-default" name="VSAN2" />
+			</vnicFc>
+			<vnicFcNode identPoolName="WWNN2" addr="pool-derived" />
+			<vnicFc switchId="A" statsPolicyName="default" order="1"
+				adminVcon="any" qosPolicyName="QoS2" pinToGroupName="" persBind="disabled"
+				nwTemplName="HBA2" maxDataFieldSize="2048" identPoolName="WWPN2"
+				addr="derived" adaptorProfileName="AdapPol2" persBindClear="no"
+				name="vHBA2">
+				<vnicFcIf rn="if-default" name="VSAN3" />
+			</vnicFc>
+			<vnicFcNode identPoolName="WWNN2" addr="pool-derived" />
+		</vnicSanConnPolicy>
+		<vnicSanConnPolicy policyOwner="local" descr="ConnPol2"
+			name="ConnPol2">
+			<vnicFc switchId="A" statsPolicyName="default" order="1"
+				adminVcon="any" qosPolicyName="QoS1" pinToGroupName="" persBind="disabled"
+				nwTemplName="HBA1" maxDataFieldSize="2048" identPoolName="WWPN1"
+				addr="derived" adaptorProfileName="AdapPol1" persBindClear="no"
+				name="vHBA1">
+				<vnicFcIf rn="if-default" name="VSAN2" />
+			</vnicFc>
+			<vnicFcNode identPoolName="WWNN2" addr="pool-derived" />
+			<vnicFc switchId="A" statsPolicyName="default" order="1"
+				adminVcon="any" qosPolicyName="QoS2" pinToGroupName="" persBind="disabled"
+				nwTemplName="HBA2" maxDataFieldSize="2048" identPoolName="WWPN2"
+				addr="derived" adaptorProfileName="AdapPol2" persBindClear="no"
+				name="vHBA2">
+				<vnicFcIf rn="if-default" name="VSAN3" />
+			</vnicFc>
+			<vnicFcNode identPoolName="WWNN2" addr="pool-derived" />
+		</vnicSanConnPolicy>
+		<orgOrg name="Cisco">
+			<macpoolPool policyOwner="local" descr="MAC3" name="MAC3"
+				assignmentOrder="default">
+				<macpoolBlock to="00:25:B5:00:00:02" from="00:25:B5:00:00:00" />
+			</macpoolPool>
+			<vnicLanConnTempl policyOwner="local" descr="nic2"
+				target="Adapter" statsPolicyName="default" pinToGroupName=""
+				templType="updating-template" switchId="A" qosPolicyName="QoS3"
+				nwCtrlPolicyName="NetCntrlPol3" name="nic2" mtu="1500"
+				identPoolName="MAC3">
+				<vnicEtherIf defaultNet="no" name="vlan103" />
+			</vnicLanConnTempl>
+			<vnicLanConnTempl policyOwner="local" descr="nic3"
+				target="Adapter" statsPolicyName="default" pinToGroupName=""
+				templType="updating-template" switchId="A" qosPolicyName=""
+				nwCtrlPolicyName="" name="nic3" mtu="1500" />
+			<vnicSanConnTempl policyOwner="local" descr="HBA3"
+				switchId="A" statsPolicyName="default" pinToGroupName=""
+				templType="updating-template" qosPolicyName="QoS3" name="HBA3"
+				maxDataFieldSize="2048" identPoolName="WWPN3">
+				<vnicFcIf name="VSAN5" />
+			</vnicSanConnTempl>
+			<vnicSanConnTempl policyOwner="local" descr="HBA4"
+				switchId="A" statsPolicyName="default" pinToGroupName=""
+				templType="updating-template" qosPolicyName="" name="HBA_NULL"
+				maxDataFieldSize="2048" identPoolName="default">
+				<vnicFcIf name="default" />
+			</vnicSanConnTempl>
+			<fcpoolInitiators policyOwner="local" descr="WWNN3"
+				purpose="node-wwn-assignment" name="WWNN3" maxPortsPerNode="upto3"
+				assignmentOrder="default">
+				<fcpoolBlock to="20:00:00:25:B5:00:00:03" from="20:00:00:25:B5:00:00:00" />
+				<fcpoolInitiator name="" id="20:00:00:25:B5:00:00:00"
+					descr="" />
+				<fcpoolInitiator name="" id="20:00:00:25:B5:00:00:01"
+					descr="" />
+				<fcpoolInitiator name="" id="20:00:00:25:B5:00:00:02"
+					descr="" />
+				<fcpoolInitiator name="" id="20:00:00:25:B5:00:00:03"
+					descr="" />
+			</fcpoolInitiators>
+			<fcpoolInitiators policyOwner="local" descr="WWPN3"
+				purpose="port-wwn-assignment" name="WWPN3" maxPortsPerNode="upto3"
+				assignmentOrder="default">
+				<fcpoolBlock to="20:00:00:25:B5:00:00:03" from="20:00:00:25:B5:00:00:00" />
+				<fcpoolInitiator name="" id="20:00:00:25:B5:00:00:00"
+					descr="" />
+				<fcpoolInitiator name="" id="20:00:00:25:B5:00:00:01"
+					descr="" />
+				<fcpoolInitiator name="" id="20:00:00:25:B5:00:00:02"
+					descr="" />
+				<fcpoolInitiator name="" id="20:00:00:25:B5:00:00:03"
+					descr="" />
+			</fcpoolInitiators>
+			<uuidpoolPool policyOwner="local" descr="UUID Pool 3"
+				prefix="00000000-0001-0000" name="UUID_3" assignmentOrder="default">
+				<uuidpoolBlock to="0000-000000000001" from="0000-000000000001" />
+			</uuidpoolPool>
+			<storageLocalDiskConfigPolicy
+				policyOwner="local" descr="Disk Policy 3" protectConfig="yes"
+				mode="any-configuration" flexFlashState="disable"
+				flexFlashRAIDReportingState="disable" name="LocalDisk3" />
+			<computePool policyOwner="local" descr="Server Pool 3"
+				name="SerPool3" />
+			<computeQual policyOwner="local" descr="SP Qualifier 3"
+				name="SerPool_Q3">
+				<computeChassisQual minId="1" maxId="1">
+					<computeSlotQual minId="2" maxId="2" />
+				</computeChassisQual>
+			</computeQual>
+			<computePoolingPolicy policyOwner="local"
+				descr="Server pool policy" qualifier="SerPool_Q3"
+				poolDn="org-root/org-Cisco/compute-pool-SerPool3" name="SerPool_P3" />
+			<computePoolingPolicy policyOwner="local"
+				descr="Server pool policy" name="SerPool_NULL" />
+			<lsServer policyOwner="local" vconProfileName="" uuid="derived"
+				usrLbl="" type="instance" statsPolicyName="default" srcTemplName="Template_3"
+				solPolicyName="" scrubPolicyName="" resolveRemote="yes"
+				powerPolicyName="default" name="SP_3" mgmtFwPolicyName=""
+				mgmtAccessPolicyName="" maintPolicyName="" localDiskPolicyName="LocalDisk3"
+				identPoolName="UUID_3" hostFwPolicyName="" extIPState="none"
+				extIPPoolName="ext-mgmt" dynamicConPolicyName="" descr="SP Description3"
+				bootPolicyName="Boot-P3" biosProfileName="" agentPolicyName="">
+				<lsRequirement restrictMigration="no" qualifier=""
+					name="SerPool3" />
+				<vnicFc switchId="A" statsPolicyName="default" order="1"
+					adminVcon="any" qosPolicyName="" pinToGroupName="" persBind="disabled"
+					nwTemplName="HBA3" maxDataFieldSize="2048" identPoolName="WWPN3"
+					adaptorProfileName="" persBindClear="no" name="HBA3">
+					<vnicFcIf name="vsanA" />
+				</vnicFc>
+				<lsVConAssign vnicName="nic2" transport="ethernet"
+					order="2" adminVcon="any" />
+				<vnicEther statsPolicyName="default" order="2" adminVcon="any"
+					switchId="B" qosPolicyName="" pinToGroupName="" nwTemplName="nic2"
+					nwCtrlPolicyName="" mtu="1500" identPoolName="MAC3"
+					adaptorProfileName="" name="nic2">
+					<vnicEtherIf defaultNet="no" name="vlan103" />
+				</vnicEther>
+				<lsVConAssign vnicName="HBA3" transport="fc" order="1"
+					adminVcon="any" />
+				<vnicConnDef sanConnPolicyName="ConnPol3"
+					lanConnPolicyName="" />
+				<lsVersionBeh vnicOrder="dynamic-all-last" vnicMap="physical-cap-first"
+					vconMap="round-robin" pciEnum="static-zero-func" />
+				<lsServerExtension guid="db8f8cdb-4d0b-430b-9c8f-c1c43ba17f48" />
+				<vnicFcNode identPoolName="WWNN3" addr="pool-derived" />
+				<fabricVCon transport="ethernet,fc" share="shared"
+					select="all" placement="physical" instType="auto" id="1" fabric="NONE" />
+				<fabricVCon transport="ethernet,fc" share="shared"
+					select="all" placement="physical" instType="auto" id="2" fabric="NONE" />
+				<fabricVCon transport="ethernet,fc" share="shared"
+					select="all" placement="physical" instType="auto" id="3" fabric="NONE" />
+				<fabricVCon transport="ethernet,fc" share="shared"
+					select="all" placement="physical" instType="auto" id="4" fabric="NONE" />
+				<lsPower state="up" />
+			</lsServer>
+			<lsServer policyOwner="local" vconProfileName="" uuid="derived"
+				usrLbl="" type="updating-template" statsPolicyName="default"
+				srcTemplName="" solPolicyName="" scrubPolicyName="" resolveRemote="yes"
+				powerPolicyName="default" name="Template_3" mgmtFwPolicyName=""
+				mgmtAccessPolicyName="" maintPolicyName="" localDiskPolicyName="LocalDisk3"
+				identPoolName="UUID_3" hostFwPolicyName="" extIPState="none"
+				extIPPoolName="ext-mgmt" dynamicConPolicyName=""
+				descr="Profile_Template Desc 3" bootPolicyName="Boot-P3"
+				biosProfileName="" agentPolicyName="">
+				<lsRequirement restrictMigration="no" qualifier=""
+					name="SerPool3" />
+				<vnicFc switchId="A" statsPolicyName="default" order="1"
+					adminVcon="any" qosPolicyName="" pinToGroupName="" persBind="disabled"
+					nwTemplName="HBA3" maxDataFieldSize="2048" identPoolName="WWPN3"
+					adaptorProfileName="" persBindClear="no" name="HBA3">
+					<vnicFcIf name="vsanA" />
+				</vnicFc>
+				<lsVConAssign vnicName="nic2" transport="ethernet"
+					order="2" adminVcon="any" />
+				<vnicEther statsPolicyName="default" order="2" adminVcon="any"
+					switchId="B" qosPolicyName="" pinToGroupName="" nwTemplName="nic2"
+					nwCtrlPolicyName="" mtu="1500" identPoolName="MAC3"
+					adaptorProfileName="" name="nic2">
+					<vnicEtherIf defaultNet="no" name="vlan103" />
+				</vnicEther>
+				<lsVConAssign vnicName="HBA3" transport="fc" order="1"
+					adminVcon="any" />
+				<vnicConnDef sanConnPolicyName="ConnPol3"
+					lanConnPolicyName="" />
+				<vnicFcNode identPoolName="WWNN3" addr="pool-derived" />
+				<fabricVCon transport="ethernet,fc" share="shared"
+					select="all" placement="physical" instType="auto" id="1" fabric="NONE" />
+				<fabricVCon transport="ethernet,fc" share="shared"
+					select="all" placement="physical" instType="auto" id="2" fabric="NONE" />
+				<fabricVCon transport="ethernet,fc" share="shared"
+					select="all" placement="physical" instType="auto" id="3" fabric="NONE" />
+				<fabricVCon transport="ethernet,fc" share="shared"
+					select="all" placement="physical" instType="auto" id="4" fabric="NONE" />
+				<lsPower state="up" />
+			</lsServer>
+			<lsServer policyOwner="local" vconProfileName="" uuid="derived"
+				usrLbl="" type="updating-template" statsPolicyName="default"
+				srcTemplName="" solPolicyName="" scrubPolicyName="" resolveRemote="yes"
+				powerPolicyName="default" name="Template_NULL" mgmtFwPolicyName=""
+				mgmtAccessPolicyName="" maintPolicyName="" localDiskPolicyName=""
+				identPoolName="default" hostFwPolicyName="" extIPState="none"
+				extIPPoolName="ext-mgmt" dynamicConPolicyName=""
+				descr="Profile_Template Desc 4" bootPolicyName="" biosProfileName=""
+				agentPolicyName="">
+				<lsVConAssign vnicName="dummy_value" transport="ethernet"
+					order="2" adminVcon="any" />
+				<vnicEther statsPolicyName="default" order="2" adminVcon="any"
+					switchId="B" qosPolicyName="" pinToGroupName="" nwTemplName=""
+					nwCtrlPolicyName="" mtu="1500" identPoolName="" adaptorProfileName=""
+					name="dummy_value" />
+				<lsVConAssign vnicName="dummy_value" transport="fc"
+					order="1" adminVcon="any" />
+				<vnicConnDef lanConnPolicyName="" />
+				<vnicFcNode identPoolName="node-default" addr="pool-derived" />
+				<fabricVCon transport="ethernet,fc" share="shared"
+					select="all" placement="physical" instType="auto" id="1" fabric="NONE" />
+				<fabricVCon transport="ethernet,fc" share="shared"
+					select="all" placement="physical" instType="auto" id="2" fabric="NONE" />
+				<fabricVCon transport="ethernet,fc" share="shared"
+					select="all" placement="physical" instType="auto" id="3" fabric="NONE" />
+				<fabricVCon transport="ethernet,fc" share="shared"
+					select="all" placement="physical" instType="auto" id="4" fabric="NONE" />
+				<lsPower state="up" />
+			</lsServer>
+			<lsbootPolicy policyOwner="local" descr="Boot Policy 3"
+				rebootOnUpdate="no" purpose="operational" enforceVnicName="yes"
+				bootMode="legacy" name="Boot-P3">
+				<lsbootLan prot="pxe" order="1">
+					<lsbootLanImagePath vnicName="nic2" type="primary"
+						provSrvPolicyName="" imgSecPolicyName="" imgPolicyName=""
+						iSCSIVnicName="" bootIpPolicyName="" />
+				</lsbootLan>
+			</lsbootPolicy>
+			<lsbootPolicy policyOwner="local" descr="Boot Policy 4"
+				rebootOnUpdate="no" purpose="operational" enforceVnicName="yes"
+				bootMode="legacy" name="Boot-P4" />
+			<nwctrlDefinition policyOwner="local" descr="NetCntrlPol3"
+				uplinkFailAction="link-down" name="NetCntrlPol3" macRegisterMode="only-native-vlan"
+				cdp="disabled">
+				<dpsecMac name="" policyOwner="local" descr="" forge="allow" />
+			</nwctrlDefinition>
+			<epqosDefinition policyOwner="local" descr="" name="QoS3">
+				<epqosEgress name="" rate="line-rate" prio="best-effort"
+					hostControl="none" burst="10240" />
+			</epqosDefinition>
+			<adaptorHostFcIfProfile policyOwner="local"
+				descr="AdapPol3" name="AdapPol3">
+				<adaptorFcCdbWorkQueueProfile rn="fc-cdb-work-q"
+					ringSize="512" count="1" />
+				<adaptorFcPortPLogiProfile rn="fc-port-flogi"
+					timeout="20000" retries="8" />
+				<adaptorFcPortFLogiProfile timeout="4000"
+					retries="8" />
+				<adaptorFcErrorRecoveryProfile rn="fc-err-rec"
+					portDownTimeout="30000" portDownIoRetryCount="30" linkDownTimeout="30000"
+					fcpErrorRecovery="disabled" />
+				<adaptorFcWorkQueueProfile rn="fc-work-q"
+					ringSize="64" />
+				<adaptorFcRecvQueueProfile rn="fc-rcv-q"
+					ringSize="64" />
+				<adaptorFcPortProfile rn="fc-port"
+					lunsPerTarget="256" ioThrottleCount="256" />
+				<adaptorFcInterruptProfile rn="fc-int"
+					mode="msi-x" />
+			</adaptorHostFcIfProfile>
+			<vnicSanConnPolicy policyOwner="local" descr="ConnPol3"
+				name="ConnPol3">
+				<vnicFc switchId="A" statsPolicyName="default" order="1"
+					adminVcon="any" qosPolicyName="QoS3" pinToGroupName="" persBind="disabled"
+					nwTemplName="HBA3" maxDataFieldSize="2048" identPoolName="WWPN3"
+					addr="derived" adaptorProfileName="AdapPol3" persBindClear="no"
+					name="vHBA3">
+					<vnicFcIf rn="if-default" name="VSAN5" />
+				</vnicFc>
+				<vnicFcNode identPoolName="WWNN3" addr="pool-derived" />
+			</vnicSanConnPolicy>
+		</orgOrg>
+	</orgOrg>
+	<fabricEp>
+		<fabricEthEstcCloud>
+			<statsThresholdPolicy policyOwner="local" descr=""
+				name="default"></statsThresholdPolicy>
+			<nwctrlDefinition policyOwner="local" descr=""
+				uplinkFailAction="link-down" name="default" macRegisterMode="only-native-vlan"
+				cdp="disabled">
+				<dpsecMac name="" policyOwner="local" descr="" forge="allow"></dpsecMac>
+			</nwctrlDefinition>
+			<fabricVlan policyOwner="local" sharing="none" pubNwName=""
+				name="default" mcastPolicyName="" id="1" defaultNet="no"
+				compressionType="included">
+			</fabricVlan>
+			<fabricEthEstc name="" id="B"></fabricEthEstc>
+			<fabricEthEstc name="" id="A"></fabricEthEstc>
+		</fabricEthEstcCloud>
+		<fabricFcEstcCloud>
+			<statsThresholdPolicy policyOwner="local" descr=""
+				name="default"></statsThresholdPolicy>
+			<fabricVsan policyOwner="local" id="1" zoningState="disabled"
+				name="default" fcoeVlan="4048">
+			</fabricVsan>
+			<fabricBHVlan policyOwner="local" sharing="none"
+				pubNwName="" name="fcoe-default-native" id="4049"></fabricBHVlan>
+			<fabricFcEstc name="" id="B"></fabricFcEstc>
+			<fabricFcEstc name="" id="A"></fabricFcEstc>
+		</fabricFcEstcCloud>
+		<fabricDceSrv name="" id="A">
+			<statsThresholdPolicy policyOwner="local" descr=""
+				name="default"></statsThresholdPolicy>
+			<fabricDceSwSrv name="" id="B">
+				<fabricDceSwSrvEp usrLbl="Chassis 1 IOM port 1"
+					slotId="1" portId="1" />
+				<fabricDceSwSrvEp usrLbl="Chassis 2 IOM port 1"
+					slotId="1" portId="2" />
+			</fabricDceSwSrv>
+			<fabricDceSwSrv name="" id="A">
+				<fabricDceSwSrvEp usrLbl="Chassis 1 IOM port 1"
+					slotId="1" portId="1" />
+				<fabricDceSwSrvEp usrLbl="Chassis 2 IOM port 1"
+					slotId="1" portId="2" />
+			</fabricDceSwSrv>
+		</fabricDceSrv>
+		<fabricLanCloud vlanCompression="disabled" mode="end-host"
+			macAging="mode-default">
+			<fabricEthLinkProfile policyOwner="local" descr=""
+				udldLinkPolicyName="default" name="default" cdpLinkPolicyName=""></fabricEthLinkProfile>
+			<fabricUdldLinkPolicy policyOwner="local" descr=""
+				name="default" mode="normal" adminState="disabled"></fabricUdldLinkPolicy>
+			<statsThresholdPolicy policyOwner="local" descr=""
+				name="default"></statsThresholdPolicy>
+			<extvmmVMNetworkSets></extvmmVMNetworkSets>
+			<extvmmNetworkSets>
+			</extvmmNetworkSets>
+			<fabricVlan policyOwner="local" sharing="none" pubNwName=""
+				name="default" mcastPolicyName="" id="1" defaultNet="no"
+				compressionType="included">
+			</fabricVlan>
+			<mgmtInbandProfile poolName="" name=""
+				defaultVlanName=""></mgmtInbandProfile>
+			<vnicProfileSet>
+			</vnicProfileSet>
+			<flowctrlDefinition policyOwner="local" descr="">
+				<flowctrlItem snd="off" rcv="off" prio="auto" name="default"></flowctrlItem>
+			</flowctrlDefinition>
+			<qosclassDefinition policyOwner="local" descr="">
+				<qosclassEthBE name="" multicastOptimize="no" weight="5"
+					mtu="normal"></qosclassEthBE>
+				<qosclassEthClassified name=""
+					multicastOptimize="no" weight="10" priority="platinum" mtu="normal"
+					drop="no-drop" cos="5" adminState="disabled"></qosclassEthClassified>
+				<qosclassEthClassified name=""
+					multicastOptimize="no" weight="8" priority="silver" mtu="normal"
+					drop="drop" cos="2" adminState="disabled"></qosclassEthClassified>
+				<qosclassEthClassified name=""
+					multicastOptimize="no" weight="7" priority="bronze" mtu="normal"
+					drop="drop" cos="1" adminState="disabled"></qosclassEthClassified>
+				<qosclassEthClassified name=""
+					multicastOptimize="no" weight="9" priority="gold" mtu="normal"
+					drop="drop" cos="4" adminState="disabled"></qosclassEthClassified>
+				<qosclassFc name="" weight="5" cos="3"></qosclassFc>
+			</qosclassDefinition>
+			<fabricEthLan name="" id="B">
+				<fabricEthLanEp usrLbl="Uplink" slotId="1" portId="5" />
+				<fabricEthLanEp usrLbl="Uplink" slotId="1" portId="6" />
+				<fabricEthLanPc name="PC-B1" descr="" adminState="enabled"
+					operSpeed="indeterminate" flowCtrlPolicy="default" adminSpeed="10gbps"
+					portId="1">
+					<fabricEthLanPcEp name="" adminState="enabled"
+						slotId="1" portId="3" ethLinkProfileName="default" />
+					<fabricEthLanPcEp name="" adminState="enabled"
+						slotId="1" portId="4" ethLinkProfileName="default" />
+				</fabricEthLanPc>
+			</fabricEthLan>
+			<fabricEthLan name="" id="A">
+				<fabricEthLanEp usrLbl="Uplink" slotId="1" portId="5" />
+				<fabricEthLanEp usrLbl="Uplink" slotId="1" portId="6" />
+				<fabricEthLanPc name="PC-A1" descr="" adminState="enabled"
+					operSpeed="indeterminate" flowCtrlPolicy="default" adminSpeed="10gbps"
+					portId="1">
+					<fabricEthLanPcEp name="" adminState="enabled"
+						slotId="1" portId="3" ethLinkProfileName="default" />
+					<fabricEthLanPcEp name="" adminState="enabled"
+						slotId="1" portId="4" ethLinkProfileName="default" />
+				</fabricEthLanPc>
+			</fabricEthLan>
+			<fabricVlan name="vlan100" id="100" />
+			<fabricVlan name="vlan101" id="101" />
+			<fabricVlan name="vlan102" id="102" />
+			<fabricVlan name="vlan103" id="103" />
+		</fabricLanCloud>
+		<fabricSanCloud mode="end-host">
+			<statsThresholdPolicy policyOwner="local" descr=""
+				name="default"></statsThresholdPolicy>
+			<fabricVsan policyOwner="local" id="1" zoningState="disabled"
+				name="default" fcoeVlan="1">
+				<fabricFcVsanPortEp adminState="enabled"
+					switchId="A" slotId="1" portId="29" />
+				<fabricFcVsanPortEp adminState="enabled"
+					switchId="A" slotId="1" portId="30" />
+				<fabricFcVsanPortEp adminState="enabled"
+					switchId="A" slotId="1" portId="31" />
+				<fabricFcVsanPortEp adminState="enabled"
+					switchId="A" slotId="1" portId="32" />
+				<fabricFcVsanPortEp adminState="enabled"
+					switchId="B" slotId="1" portId="29" />
+				<fabricFcVsanPortEp adminState="enabled"
+					switchId="B" slotId="1" portId="30" />
+				<fabricFcVsanPortEp adminState="enabled"
+					switchId="B" slotId="1" portId="31" />
+				<fabricFcVsanPortEp adminState="enabled"
+					switchId="B" slotId="1" portId="32" />
+			</fabricVsan>
+			<fabricFcSan name="" uplinkTrunking="disabled" id="B">
+				<fabricVsan id="4" name="VSAN4" fcoeVlan="4" />
+				<fabricVsan id="5" name="VSAN5" fcoeVlan="5" />
+				<fabricFcSanEp adminState="enabled" usrLbl="Uplink"
+					slotId="1" portId="29" fillPattern="arbff" />
+				<fabricFcSanEp adminState="enabled" usrLbl="Uplink"
+					slotId="1" portId="30" fillPattern="arbff" />
+				<fabricFcSanEp adminState="enabled" usrLbl="Uplink"
+					slotId="1" portId="31" fillPattern="arbff" />
+				<fabricFcSanEp adminState="enabled" usrLbl="Uplink"
+					slotId="1" portId="32" fillPattern="arbff" />
+			</fabricFcSan>
+			<fabricFcSan name="" uplinkTrunking="disabled" id="A">
+				<fabricVsan id="2" name="VSAN2" fcoeVlan="2" />
+				<fabricVsan id="3" name="VSAN3" fcoeVlan="3" />
+				<fabricFcSanEp adminState="enabled" usrLbl="Uplink"
+					slotId="1" portId="29" fillPattern="arbff" />
+				<fabricFcSanEp adminState="enabled" usrLbl="Uplink"
+					slotId="1" portId="30" fillPattern="arbff" />
+				<fabricFcSanEp adminState="enabled" usrLbl="Uplink"
+					slotId="1" portId="31" fillPattern="arbff" />
+				<fabricFcSanEp adminState="enabled" usrLbl="Uplink"
+					slotId="1" portId="32" fillPattern="arbff" />
+			</fabricFcSan>
+		</fabricSanCloud>
+	</fabricEp>
+	<topSystem site="" owner="" name="" descr="">
+		<commSvcEp policyOwner="local" descr="" name="">
+			<commDateTime policyOwner="local" descr="" name="" port="0"
+				adminState="enabled" timezone="Asia/Calcutta">
+				<commNtpProvider descr="" name="10.10.10.10" />
+				<commNtpProvider descr="" name="11.11.11.11" />
+			</commDateTime>
+			<commDns policyOwner="local" descr="" name="" port="0"
+				adminState="enabled" domain="">
+				<commDnsProvider descr="" name="8.8.8.8" />
+				<commDnsProvider descr="" name="8.8.8.7" />
+			</commDns>
+		</commSvcEp>
+		<aaaAuthRealm policyOwner="local" descr="" name=""
+			defRolePolicy="no-login" defLogin="local" conLogin="local">
+			<aaaDomain descr="" sessionTimeout="7200" refreshPeriod="60"
+				name="Local_Domain1">
+				<aaaDomainAuth name="" descr="" use2Factor="no"
+					providerGroup="" realm="local" />
+			</aaaDomain>
+			<aaaDomain descr="" sessionTimeout="7200" refreshPeriod="60"
+				name="Local_Domain2">
+				<aaaDomainAuth name="" descr="" use2Factor="no"
+					providerGroup="" realm="local" />
+			</aaaDomain>
+		</aaaAuthRealm>
+	</topSystem>
+</topRoot>

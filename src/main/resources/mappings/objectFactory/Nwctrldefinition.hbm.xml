@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Nwctrldefinition" table="nwctrldefinition" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="orgOrg" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Orgorg" fetch="select">
+            <column name="FK_orgOrg" not-null="true" />
+        </many-to-one>
+        <many-to-one name="fabricEthEstcCloud" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Fabricethestccloud" fetch="select">
+            <column name="FK_fabricEthEstcCloud" not-null="true" />
+        </many-to-one>
+        <property name="policyOwner" type="string">
+            <column name="policyOwner" />
+        </property>
+        <property name="descr" type="string">
+            <column name="descr" />
+        </property>
+        <property name="uplinkFailAction" type="string">
+            <column name="uplinkFailAction" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="macRegisterMode" type="string">
+            <column name="macRegisterMode" />
+        </property>
+        <property name="cdp" type="string">
+            <column name="cdp" />
+        </property>
+    </class>
+</hibernate-mapping>

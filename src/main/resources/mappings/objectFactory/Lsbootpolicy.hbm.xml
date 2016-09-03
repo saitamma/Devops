@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Lsbootpolicy" table="lsbootpolicy" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="orgorg" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Orgorg" fetch="select">
+            <column name="FK_orgOrg" not-null="true" />
+        </many-to-one>
+        <property name="policyOwner" type="string">
+            <column name="policyOwner" />
+        </property>
+        <property name="descr" type="string">
+            <column name="descr" />
+        </property>
+        <property name="rebootOnUpdate" type="string">
+            <column name="rebootOnUpdate" />
+        </property>
+        <property name="purpose" type="string">
+            <column name="purpose" />
+        </property>
+        <property name="enforceVnicName" type="string">
+            <column name="enforceVnicName" />
+        </property>
+        <property name="bootMode" type="string">
+            <column name="bootMode" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+    </class>
+</hibernate-mapping>

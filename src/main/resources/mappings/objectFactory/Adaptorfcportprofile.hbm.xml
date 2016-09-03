@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Adaptorfcportprofile" table="adaptorfcportprofile" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="adaptorhostfcifprofile" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Adaptorhostfcifprofile" fetch="select">
+            <column name="FK_adaptorHostFcIfProfile" not-null="true" />
+        </many-to-one>
+        <property name="rn" type="string">
+            <column name="rn" />
+        </property>
+        <property name="lunsPerTarget" type="string">
+            <column name="lunsPerTarget" />
+        </property>
+        <property name="ioThrottleCount" type="string">
+            <column name="ioThrottleCount" />
+        </property>
+    </class>
+</hibernate-mapping>

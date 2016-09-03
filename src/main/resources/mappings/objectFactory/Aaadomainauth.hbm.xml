@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2014 10:41:27 AM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Aaadomainauth" table="aaadomainauth" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="aaaDomain" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Aaadomain" fetch="select">
+            <column name="FK_aaaDomain" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="descr" type="string">
+            <column name="descr" />
+        </property>
+        <property name="use2Factor" type="string">
+            <column name="use2Factor" />
+        </property>
+        <property name="providerGroup" type="string">
+            <column name="providerGroup" />
+        </property>
+        <property name="realm" type="string">
+            <column name="realm" />
+        </property>
+    </class>
+</hibernate-mapping>

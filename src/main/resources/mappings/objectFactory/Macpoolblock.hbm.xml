@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2014 10:41:27 AM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Macpoolblock" table="macpoolblock" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="macpoolpool" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Macpoolpool" fetch="select">
+            <column name="FK_macpoolPool" not-null="true" />
+        </many-to-one>
+        <property name="to" type="string">
+            <column name="to_to" />
+        </property>
+        <property name="from" type="string">
+            <column name="from_from" />
+        </property>
+    </class>
+</hibernate-mapping>

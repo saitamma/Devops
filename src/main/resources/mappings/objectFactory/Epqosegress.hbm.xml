@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Epqosegress" table="epqosegress" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="epqosdefinition" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Epqosdefinition" fetch="select">
+            <column name="FK_epqosDefinition" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="rate" type="string">
+            <column name="rate" />
+        </property>
+        <property name="prio" type="string">
+            <column name="prio" />
+        </property>
+        <property name="hostControl" type="string">
+            <column name="hostControl" />
+        </property>
+        <property name="burst" type="string">
+            <column name="burst" />
+        </property>
+    </class>
+</hibernate-mapping>

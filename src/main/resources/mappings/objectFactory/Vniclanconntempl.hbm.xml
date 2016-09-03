@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Vniclanconntempl" table="vniclanconntempl" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="orgOrg" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Orgorg" fetch="select">
+            <column name="FK_orgOrg" not-null="true" />
+        </many-to-one>
+        <property name="policyOwner" type="string">
+            <column name="policyOwner" />
+        </property>
+        <property name="descr" type="string">
+            <column name="descr" />
+        </property>
+        <property name="target" type="string">
+            <column name="target" />
+        </property>
+        <property name="statsPolicyName" type="string">
+            <column name="statsPolicyName" />
+        </property>
+        <property name="pinToGroupName" type="string">
+            <column name="pinToGroupName" />
+        </property>
+        <property name="templType" type="string">
+            <column name="templType" />
+        </property>
+        <property name="switchId" type="string">
+            <column name="switchId" />
+        </property>
+        <property name="qosPolicyName" type="string">
+            <column name="qosPolicyName" />
+        </property>
+        <property name="nwCtrlPolicyName" type="string">
+            <column name="nwCtrlPolicyName" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="mtu" type="string">
+            <column name="mtu" />
+        </property>
+        <property name="identPoolName" type="string">
+            <column name="identPoolName" />
+        </property>
+    </class>
+</hibernate-mapping>

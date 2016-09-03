@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 19, 2015 5:40:55 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Biosvfconsoleredirection" table="biosVfConsoleRedirection" >
+        <id name="primaryKey" type="java.lang.Integer">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="biosvprofile" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Biosvprofile" fetch="select">
+            <column name="FK_biosVProfile" not-null="true" />
+        </many-to-one>
+        <property name="childAction" type="string">
+            <column name="childAction" />
+        </property>
+        <property name="rn" type="string">
+            <column name="rn" />
+        </property>
+        <property name="vpBaudRate" type="string">
+            <column name="vpBaudRate" />
+        </property>
+        <property name="vpConsoleRedirection" type="string">
+            <column name="vpConsoleRedirection" />
+        </property>
+        <property name="vpFlowControl" type="string">
+            <column name="vpFlowControl" />
+        </property>
+        <property name="vpLegacyOsredirection" type="string">
+            <column name="vpLegacyOSRedirection" />
+        </property>
+        <property name="vpPuttyKeyPad" type="string">
+            <column name="vpPuttyKeyPad" />
+        </property>
+        <property name="vpTerminalType" type="string">
+            <column name="vpTerminalType" />
+        </property>
+    </class>
+</hibernate-mapping>

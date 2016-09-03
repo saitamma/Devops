@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Vnicfcnode" table="vnicfcnode" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="lsserver" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Lsserver" fetch="select">
+            <column name="FK_lsServer" not-null="true" />
+        </many-to-one>
+        <many-to-one name="vnicsanconnpolicy" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Vnicsanconnpolicy" fetch="select">
+            <column name="FK_vnicSanConnPolicy" not-null="true" />
+        </many-to-one>
+        <property name="identPoolName" type="string">
+            <column name="identPoolName" />
+        </property>
+        <property name="addr" type="string">
+            <column name="addr" />
+        </property>
+    </class>
+</hibernate-mapping>

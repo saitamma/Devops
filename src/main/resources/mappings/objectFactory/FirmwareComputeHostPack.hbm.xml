@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 18, 2014 4:18:33 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.FirmwareComputeHostPack" table="firmwareComputeHostPack">
+        <id name="primaryKey" type="java.lang.Integer">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="orgorg" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Orgorg" fetch="select">
+            <column name="FK_orgOrg" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="descr" type="string">
+            <column name="descr" />
+        </property>
+        <property name="bladeBundleVersion" type="string">
+            <column name="bladeBundleVersion" />
+        </property>
+        <property name="ignoreCompCheck" type="string">
+            <column name="ignoreCompCheck" />
+        </property>
+        <property name="firmwareMode" type="string">
+            <column name="firmware_mode" />
+        </property>
+        <property name="policyOwner" type="string">
+            <column name="policyOwner" />
+        </property>
+        <property name="rackBundleVersion" type="string">
+            <column name="rackBundleVersion" />
+        </property>
+        <property name="stageSize" type="string">
+            <column name="stageSize" />
+        </property>
+        <property name="updateTrigger" type="string">
+            <column name="updateTrigger" />
+        </property>
+    </class>
+</hibernate-mapping>

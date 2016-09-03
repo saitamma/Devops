@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 5, 2015 11:21:21 AM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Adaptorethinterruptprofile" table="adaptorethinterruptprofile">
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="adaptorhostethifprofile" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Adaptorhostethifprofile" fetch="select">
+            <column name="FK_adaptorhostethifprofile" not-null="true" />
+        </many-to-one>
+        <property name="coalescingTime" type="string">
+            <column name="coalescingTime" />
+        </property>
+        <property name="coalescingType" type="string">
+            <column name="coalescingType" />
+        </property>
+        <property name="count" type="string">
+            <column name="count" />
+        </property>
+        <property name="mode" type="string">
+            <column name="mode" />
+        </property>
+    </class>
+</hibernate-mapping>

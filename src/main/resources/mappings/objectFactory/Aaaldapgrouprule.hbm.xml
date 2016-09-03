@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 25, 2014 7:10:32 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Aaaldapgrouprule" table="aaaldapgrouprule" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="aaaldapep" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Aaaldapep" fetch="select">
+            <column name="FK_aaaLdapEp" not-null="true" />
+        </many-to-one>
+        <many-to-one name="aaaldapprovider" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Aaaldapprovider" fetch="select">
+            <column name="FK_aaaLdapProvider" not-null="true" />
+        </many-to-one>
+        <property name="authorization" type="string">
+            <column name="authorization_authorization" />
+        </property>
+        <property name="descr" type="string">
+            <column name="descr" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="targetAttr" type="string">
+            <column name="targetAttr" />
+        </property>
+        <property name="traversal" type="string">
+            <column name="traversal" />
+        </property>
+        <property name="usePrimaryGroup" type="string">
+            <column name="usePrimaryGroup" />
+        </property>
+    </class>
+</hibernate-mapping>

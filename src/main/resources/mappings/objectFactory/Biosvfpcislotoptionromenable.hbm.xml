@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 19, 2015 5:40:55 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Biosvfpcislotoptionromenable" table="biosVfPCISlotOptionROMEnable" >
+        <id name="primaryKey" type="java.lang.Integer">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="biosvprofile" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Biosvprofile" fetch="select">
+            <column name="FK_biosVProfile" not-null="true" />
+        </many-to-one>
+        <property name="childAction" type="string">
+            <column name="childAction" />
+        </property>
+        <property name="rn" type="string">
+            <column name="rn" />
+        </property>
+        <property name="vpPcieSlotSasoptionRom" type="string">
+            <column name="vpPCIeSlotSASOptionROM" />
+        </property>
+        <property name="vpSlot10state" type="string">
+            <column name="vpSlot10State" />
+        </property>
+        <property name="vpSlot1state" type="string">
+            <column name="vpSlot1State" />
+        </property>
+        <property name="vpSlot2state" type="string">
+            <column name="vpSlot2State" />
+        </property>
+        <property name="vpSlot3state" type="string">
+            <column name="vpSlot3State" />
+        </property>
+        <property name="vpSlot4state" type="string">
+            <column name="vpSlot4State" />
+        </property>
+        <property name="vpSlot5state" type="string">
+            <column name="vpSlot5State" />
+        </property>
+        <property name="vpSlot6state" type="string">
+            <column name="vpSlot6State" />
+        </property>
+        <property name="vpSlot7state" type="string">
+            <column name="vpSlot7State" />
+        </property>
+        <property name="vpSlot8state" type="string">
+            <column name="vpSlot8State" />
+        </property>
+        <property name="vpSlot9state" type="string">
+            <column name="vpSlot9State" />
+        </property>
+        <property name="vpSlotMezzState" type="string">
+            <column name="vpSlotMezzState" />
+        </property>
+    </class>
+</hibernate-mapping>

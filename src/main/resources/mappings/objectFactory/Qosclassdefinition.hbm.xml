@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2014 10:41:27 AM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Qosclassdefinition" table="qosclassdefinition" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="fabriclancloud" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Fabriclancloud" fetch="select">
+            <column name="FK_fabricLanCloud" not-null="true" />
+        </many-to-one>
+        <property name="policyOwner" type="string">
+            <column name="policyOwner" />
+        </property>
+        <property name="descr" type="string">
+            <column name="descr" />
+        </property>
+    </class>
+</hibernate-mapping>

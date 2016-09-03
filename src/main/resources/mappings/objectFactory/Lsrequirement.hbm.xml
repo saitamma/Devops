@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Lsrequirement" table="lsrequirement" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="lsserver" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Lsserver" fetch="select">
+            <column name="FK_lsServer" not-null="true" />
+        </many-to-one>
+        <property name="restrictMigration" type="string">
+            <column name="restrictMigration" />
+        </property>
+        <property name="qualifier" type="string">
+            <column name="qualifier" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+    </class>
+</hibernate-mapping>

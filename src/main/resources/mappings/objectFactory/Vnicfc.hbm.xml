@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Vnicfc" table="vnicfc" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="lsserver" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Lsserver" fetch="select">
+            <column name="FK_lsServer" not-null="true" />
+        </many-to-one>
+        <many-to-one name="vnicSanConnPolicy" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Vnicsanconnpolicy" fetch="select">
+            <column name="FK_vnicSanConnPolicy" not-null="true" />
+        </many-to-one>
+        <property name="switchId" type="string">
+            <column name="switchId" />
+        </property>
+        <property name="statsPolicyName" type="string">
+            <column name="statsPolicyName" />
+        </property>
+        <property name="order" type="string">
+            <column name="order_order" />
+        </property>
+        <property name="adminVcon" type="string">
+            <column name="adminVcon" />
+        </property>
+        <property name="qosPolicyName" type="string">
+            <column name="qosPolicyName" />
+        </property>
+        <property name="pinToGroupName" type="string">
+            <column name="pinToGroupName" />
+        </property>
+        <property name="persBind" type="string">
+            <column name="persBind" />
+        </property>
+        <property name="nwTemplName" type="string">
+            <column name="nwTemplName" />
+        </property>
+        <property name="maxDataFieldSize" type="string">
+            <column name="maxDataFieldSize" />
+        </property>
+        <property name="identPoolName" type="string">
+            <column name="identPoolName" />
+        </property>
+        <property name="adaptorProfileName" type="string">
+            <column name="adaptorProfileName" />
+        </property>
+        <property name="persBindClear" type="string">
+            <column name="persBindClear" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="addr" type="string">
+            <column name="addr" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,5 @@
+package com.cisco.ca.cstg.pdi.pojos;
+
+public enum EnumLicenseKeyConstants {
+	SITEID, SITENAME, PROJECTNAME, CUSTOMERNAME, ASPID, CREATEDBY, DOWNLOADEDBY, CUSTOMERBUSINESS, CUSTOMERVERTICALS, THEATRE;
+}

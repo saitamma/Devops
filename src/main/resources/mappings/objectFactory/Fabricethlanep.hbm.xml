@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2014 10:41:27 AM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Fabricethlanep" table="fabricethlanep" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="fabricethlan" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Fabricethlan" fetch="select">
+            <column name="FK_fabricEthLan" not-null="true" />
+        </many-to-one>
+        <property name="usrLbl" type="string">
+            <column name="usrLbl" />
+        </property>
+        <property name="slotId" type="string">
+            <column name="slotId" />
+        </property>
+        <property name="portId" type="string">
+            <column name="portId" />
+        </property>
+    </class>
+</hibernate-mapping>

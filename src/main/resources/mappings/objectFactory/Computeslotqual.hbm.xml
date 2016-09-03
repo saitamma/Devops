@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Computeslotqual" table="computeslotqual" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="computechassisqual" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Computechassisqual" fetch="select">
+            <column name="FK_computeChassisQual" not-null="true" />
+        </many-to-one>
+        <property name="minId" type="string">
+            <column name="minId" />
+        </property>
+        <property name="maxId" type="string">
+            <column name="maxId" />
+        </property>
+    </class>
+</hibernate-mapping>

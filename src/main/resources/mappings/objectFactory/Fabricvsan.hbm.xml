@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2014 10:41:27 AM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Fabricvsan" table="fabricvsan" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="fabricsancloud" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Fabricsancloud" fetch="select">
+            <column name="FK_fabricSanCloud" not-null="true" />
+        </many-to-one>
+        <many-to-one name="fabricfcsan" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Fabricfcsan" fetch="select">
+            <column name="FK_fabricFcSan" not-null="true" />
+        </many-to-one>
+        <many-to-one name="fabricfcestccloud" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Fabricfcestccloud" fetch="select">
+            <column name="FK_fabricFcEstcCloud" not-null="true" />
+        </many-to-one>
+        <property name="policyOwner" type="string">
+            <column name="policyOwner" />
+        </property>
+        <property name="id" type="string">
+            <column name="id" />
+        </property>
+        <property name="zoningState" type="string">
+            <column name="zoningState" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="fcoeVlan" type="string">
+            <column name="fcoeVlan" />
+        </property>
+        <property name="text" type="string">
+            <column name="Text" />
+        </property>
+    </class>
+</hibernate-mapping>

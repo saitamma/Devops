@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Fcpoolblock" table="fcpoolblock" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="fcpoolinitiators" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Fcpoolinitiators" fetch="select">
+            <column name="FK_fcpoolInitiators" not-null="true" />
+        </many-to-one>
+        <property name="to" type="string">
+            <column name="to_to" />
+        </property>
+        <property name="from" type="string">
+            <column name="from_from" />
+        </property>
+    </class>
+</hibernate-mapping>

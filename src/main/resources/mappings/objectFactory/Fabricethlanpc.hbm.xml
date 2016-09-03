@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2014 10:41:27 AM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Fabricethlanpc" table="fabricethlanpc" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="fabricethlan" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Fabricethlan" fetch="select">
+            <column name="FK_fabricEthLan" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="descr" type="string">
+            <column name="descr" />
+        </property>
+        <property name="adminState" type="string">
+            <column name="adminState" />
+        </property>
+        <property name="operSpeed" type="string">
+            <column name="operSpeed" />
+        </property>
+        <property name="flowCtrlPolicy" type="string">
+            <column name="flowCtrlPolicy" />
+        </property>
+        <property name="adminSpeed" type="string">
+            <column name="adminSpeed" />
+        </property>
+        <property name="portId" type="string">
+            <column name="portId" />
+        </property>
+    </class>
+</hibernate-mapping>

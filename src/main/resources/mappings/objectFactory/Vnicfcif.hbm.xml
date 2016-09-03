@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Vnicfcif" table="vnicfcif" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="vnicsanconntempl" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Vnicsanconntempl" fetch="select">
+            <column name="FK_vnicSanConnTempl" not-null="true" />
+        </many-to-one>
+        <many-to-one name="vnicfc" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Vnicfc" fetch="select">
+            <column name="FK_vnicFc" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="rn" type="string">
+            <column name="rn" />
+        </property>
+    </class>
+</hibernate-mapping>

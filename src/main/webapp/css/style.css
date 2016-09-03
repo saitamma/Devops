@@ -1,0 +1,943 @@
+* {
+	font-family: Verdana;
+	font-size: 12px;
+}
+
+html,body {
+	width: 100%;
+	height: 100%;
+}
+em{color:red;}
+div:focus,li:focus,a:focus,span:focus {
+	outline: none !important;
+}
+.standByClassAddedText{
+text-align:center;
+cursor:wait;
+font-size:20px;
+font-weight: bold;
+font-style: italic;
+color:#646464;
+}
+.wizardWidth{
+	width: 1420px;
+	height: 63.0rem;
+}
+.MainTabWidthHeight{
+	width:97%;
+	left:1.0rem;
+	height: 42rem;
+}
+.heightOfFieldset{
+	height: 37rem;
+}
+#parentDiv {
+	display: table;
+	margin: 0 auto;
+}
+.pageHeader{
+	background: #BEE8F9;
+	height: 40px;
+	width: 99%;
+	border-radius:5px;
+	padding: 2px 0px 2px 10px;
+}
+.pageHeader h2{
+	color: #666666;
+	font-family: Verdana;
+	font-size: 12px;
+}
+.widtInPercent{
+	width: 100%;
+}
+.floatleft {
+	float: left;
+}
+.paddingLeft{
+	padding-left: 10px;
+}
+.paddingTop{
+	padding-top: 10px;
+}
+.paddingBottom{
+	padding-bottom: 10px;
+}
+.paddingRight{
+	padding-right: 10px;
+}
+.displaynone {
+	display: none;
+}
+.prime .dijitTextBoxReadOnly{
+	border: .1rem solid #B4B4B4 !important;
+	background-color: #f5f5f5 !important;
+}
+.prime #serversBiosPolicyConfigureDialog .xwtDropDownReadOnly{
+	border: .1rem solid #B4B4B4 !important;
+	background-color: #f5f5f5 !important;
+	font-weight: normal !important;
+}
+.clear {
+	clear: both;
+}
+
+.floatleft_clear {
+	float: left;
+	clear: both;
+}
+
+.prime .xwtAboutPage .copyright {
+	font-size: 12px;
+}
+
+/* CSS for multi select start*/
+.dojoxCheckedMultiSelectMenuCheckBoxItemIcon {
+	display: block
+}
+
+.dojoxCheckedMultiSelectCheckBoxInput {
+	opacity: 1
+}
+.dojoxCheckedMultiSelectMenu{
+	max-height: 200px;
+}
+
+
+div.pad {
+	position: absolute
+}
+
+.tundraCssForMultiSelect .dijitButtonNode {
+	border: 1px solid #c0c0c0;
+	border-bottom: 1px solid #9b9b9b;
+	padding: 0.3em 0.5em 0.5em 0.5em;
+	background: #fff url("../images/buttonEnabled.png") repeat-x bottom left;
+}
+
+.tundraCssForMultiSelect .dijitArrowButton {
+	color: #111;
+}
+
+.tundraCssForMultiSelect .dijitButtonNode {
+	border: 1px solid #c0c0c0;
+	border-bottom: 1px solid #9b9b9b;
+	padding: 0.3em 0.5em 0.5em 0.5em;
+	background: #fff url("../images/buttonEnabled.png") repeat-x bottom left;
+}
+
+.dijitSelect,.dijitSelect *,.dijitButtonNode,.dijitButtonNode * {
+	cursor: pointer;
+}
+
+.dijitButtonNode {
+	border: 1px solid gray;
+	margin: 0;
+	line-height: normal;
+	vertical-align: middle;
+	text-align: center;
+	white-space: nowrap;
+}
+
+#multiSelectIdForVlan1_menu {
+	overflow-x: scroll;
+	height: 200px;
+}
+
+#multiSelectIdForVnic_menu {
+	overflow-x: scroll;
+	height: 200px;width: 50px;
+}
+/* End Multiselect css*/
+
+/*Upload license file css*/
+fieldset {
+	display: block;
+	-webkit-margin-start: 2px;
+	-webkit-margin-end: 2px;
+	-webkit-padding-before: 0.35em;
+	-webkit-padding-start: 0.75em;
+	-webkit-padding-end: 0.75em;
+	-webkit-padding-after: 0.625em;
+	border: 0.1rem solid #B4B4B4;
+	border-image-source: initial;
+	border-image-slice: initial;
+	border-image-width: initial;
+	border-image-outset: initial;
+	border-image-repeat: initial;
+	min-width: -webkit-min-content;
+	/*padding: 5px;
+	margin-top: 20px !important; */
+}
+
+legend {
+	display: block;
+	-webkit-padding-start: 2px;
+	-webkit-padding-end: 2px;
+	border: none;
+	border-image-source: initial;
+	border-image-slice: initial;
+	border-image-width: initial;
+	border-image-outset: initial;
+	border-image-repeat: initial;
+}
+
+fieldset legend {
+	/* font-size: 15px;
+	font-family: Arial; */
+	font-weight: bold;
+	color: #464646;
+}
+
+.upload_innerDiv .browselable {
+	font-size: 15px;
+	font-weight: bold;
+	font-family: Arial;
+	color: #464646;
+}
+
+.upload_innerDiv {
+	padding: 10% 0;
+	display: table;
+	margin: 0 auto;
+}
+
+input.upload_file {
+	padding: 8px 12px;
+	font-size: 14px;
+	color: #666;
+	border: 1px solid #D8D8D8;
+	font-family: inherit;
+	width: 300px;
+}
+
+.fileUpload {
+	position: relative;
+	overflow: hidden;
+	margin: 10px;
+}
+
+.fileUpload input.upload {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity = 0);
+}
+
+.prime .xwt-TextButton .dijitButtonNode .dijitButtonText {
+	line-height: 2.5rem;
+}
+
+#nextButtonForWizard .dijitButtonText,#exitButtonForWizard .dijitButtonText,#pingUCS .dijitButtonText,#pushConfigurationUCS .dijitButtonText,#downloadButton .dijitButtonText
+	{
+	line-height: 3.5rem;
+}
+
+.prime .nextButtonClass .dijitButtonNode,.prime .configPushClass .dijitButtonNode,.prime .downloadUCSClass .dijitButtonNode
+	{
+	background-color: #2B9ADB;
+	background-image: linear-gradient(#85D0F1, #2B9ADB);
+	border: 0.1rem solid #43B9ED;
+	border-radius: 0.3rem 0.3rem 0.3rem 0.3rem;
+}
+
+.prime .nextButtonClass .dijitButtonNode #nextButtonForWizard_label,.prime .configPushClass .dijitButtonNode #pushConfigurationUCS_label,.prime .downloadUCSClass .dijitButtonNode #downloadUCSConfiguration_label
+	{
+	color: #FFFFFF;
+}
+
+.prime .dijitButton.dijitDisabled .dijitButtonNode .dijitButtonText,.prime .dijitButton.defaultButton.dijitDisabled .dijitButtonNode .dijitButtonText
+	{
+	color: #b4b4b4 !important;
+}
+
+.prime .nextButtonClass.dijitHover .dijitButtonNode,.prime .configPushClass.dijitHover .dijitButtonNode,.prime .downloadUCSClass.dijitHover .dijitButtonNode
+	{
+	background: #0390FC;
+}
+
+.prime .nextButtonClass.dijitActive .dijitButtonNode,.prime .configPushClass.dijitActive .dijitButtonNode,.prime .downloadUCSClass.dijitActive .dijitButtonNode
+	{
+	background: #2B9ADB;
+}
+
+.btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin: 2px;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.btn:focus,.btn:active:focus,.btn.active:focus {
+	outline: thin dotted;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+
+.btn:hover,.btn:focus {
+	color: #333;
+	text-decoration: none;
+}
+
+.btn:active,.btn.active {
+	background-image: none;
+	outline: 0;
+	-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+
+.btn.disabled,.btn[disabled],fieldset[disabled] .btn {
+	pointer-events: none;
+	cursor: not-allowed;
+	filter: alpha(opacity = 65);
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	opacity: .65;
+}
+
+.btn-default {
+	color: #333;
+	background-color: #ebebeb;
+	border-color: #adadad;
+	font-weight: bold;
+	font-family: Arial;
+	color: #464646;
+	font-size: 1.3rem;
+	background: linear-gradient(to bottom, #FFFFFF, #E6E6E6) repeat scroll 0
+		0 rgba(0, 0, 0, 0);
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF),
+		to(#E6E6E6));
+}
+
+.btn-primary {
+	color: #FFFFFF;
+	border: .1rem solid #43B9ED;
+	font-weight: bold;
+	font-family: Arial;
+	font-size: 1.3rem;
+	background-color: #2B9ADB;
+	background-image: linear-gradient(#85D0F1, #2B9ADB);
+}
+
+.btn-default:hover,.btn-default:focus,.btn-default:active,.btn-default.active,.open .dropdown-toggle.btn-default
+	{
+	color: #333;
+	background-color: #fff;
+	border-color: #ccc;
+}
+
+.btn-default:active,.btn-default.active,.open .dropdown-toggle.btn-default
+	{
+	background-image: none;
+}
+
+.btn-default.disabled,.btn-default[disabled],fieldset[disabled] .btn-default,.btn-default.disabled:hover,.btn-default[disabled]:hover,fieldset[disabled] .btn-default:hover,.btn-default.disabled:focus,.btn-default[disabled]:focus,fieldset[disabled] .btn-default:focus,.btn-default.disabled:active,.btn-default[disabled]:active,fieldset[disabled] .btn-default:active,.btn-default.disabled.active,.btn-default[disabled].active,fieldset[disabled] .btn-default.active
+	{
+	background-color: #fff;
+	border-color: #ccc;
+}
+
+.btn-default .badge {
+	color: #fff;
+	background-color: #333;
+}
+
+/*End Here*/
+
+/* Add css for NAV*/
+.prime .TaskNavigator>.TaskNavigatorContentArea {
+	background: none;
+}
+
+.myownClass {
+	background: linear-gradient(to bottom, #FFFFFF 0%, #E6E6E6 100%) repeat
+		scroll 0 0 rgba(0, 0, 0, 0);
+	border-radius: 100%;
+	content: '';
+	transition: 0.25s;
+	border: .1rem solid #E6E6E6;
+}
+
+.prime .Task.TaskActive {
+	border: 0.2rem solid transparent;
+	border-radius: none;
+}
+
+.prime .Task.TaskActive.dijitFocused,.prime .Task.TaskDisabled.dijitFocused
+	{
+	outline: none;
+}
+
+.prime .Task.TaskActive .myownClass {
+	background: #646464;
+	background-image: linear-gradient(#323232, #646464);
+	border: .1rem solid #323232;
+	/*height: 4.8rem !important;
+    margin-top: 0;
+    width: 4.8rem !important;background-color: #F7FF18;*/
+}
+
+.prime .Task.TaskProgressCompleted .myownClass {
+	background-color: #2B9ADB;
+	background-image: linear-gradient(#85D0F1, #2B9ADB);
+	border: .1rem solid #43B9ED;
+}
+
+.prime .Task.TaskActive .myownClass span.TaskBadge {
+	/*left: 1.3rem;
+    top: 1.3rem; */
+	
+}
+
+.prime .Task .TaskButton:focus {
+	outline: none;
+}
+
+.prime .Task.dijitFocused .myownClass {
+	/*background-color: yellow; */
+	
+}
+
+.prime .Task.TaskDisabled .myownClass {
+	background: linear-gradient(to bottom, #FFFFFF 0%, #E6E6E6 100%) repeat
+		scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+.prime .TaskArrow {
+	margin-top: 3rem;
+}
+
+.prime .Task {
+	min-width: 8rem;
+}
+
+.prime .TaskNavigator .TaskNavigatorContainer {
+	width: 0%;
+	margin: 0 auto !important;
+	display: table;
+}
+
+.prime .Task .TaskIcon .TaskBadge {
+	font-family: icon-font;
+	font-size: 2.4rem;
+	height: 2.4rem;
+	left: 1.3rem;
+	position: absolute;
+	top: 1rem;
+	color: #FFF !important;
+}
+
+.prime .dijitTabPaneWrapper.dijitTabContainerLeft-container {
+	border-right: 0.1rem solid #B4B4B4;
+}
+
+#dojox_layout_ContentPane_0.dijitContentPaneSingleChild {
+	height: 13rem !important;
+}
+
+hr.topLine {
+	border-top: 0.1rem solid #B4B4B4;
+	width: 1340px;
+}
+
+.icon p {
+	font-size: 1.2rem;
+	text-align: center;
+}
+
+*[class*='fi-']:before {
+	font-family: icon-font;
+}
+
+.fi-home:before {
+	display: inline-block;
+	content: '\e048';
+	size: 1.6rem;
+	font-size: 4.8rem;
+	color: #464646;
+}
+.fi-check:before {
+	display: inline-block;
+	content: '\e079';
+	size: 1.6rem;
+	font-size: 1.9rem;
+	font-weight: bold;
+}
+
+.fi-checkTrans:before {
+	display: inline-block;
+	content: '\e079';
+	color: transparent;
+	size: 1.6rem;
+	font-size: 1.9rem;
+	font-weight: bold;
+}
+
+.fi-edit:before {
+	display: inline-block;
+	content: "\e013";
+	size: 1.6rem;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.fi-plus:before {
+	display: inline-block;
+	content: '\e08f';
+	size: 1.6rem;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.fi-delete:before {
+	display: inline-block;
+	content: '\e002';
+	size: 1.6rem;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.fi-normal:before {
+	display: inline-block;
+	content: '\e075';
+	font-size: 3rem;
+	color: #7CBB59;
+}
+
+.fi-critical:before {
+	display: inline-block;
+	content: '\e069';
+	font-size: 3rem;
+	color: #EC2300;
+}
+
+.fi-minor:before {
+ display: inline-block;
+ content: '\e012';
+ font-size: 1.6rem;
+ color: #FFCB02;
+ cursor: pointer;
+ }
+ .fi-info:before {
+ content: '\e014';
+ display: inline-block;
+ font-size: 1.6rem;
+ color: #43B9ED;
+ cursor: pointer;
+ }
+
+.fi-accordionCloseIcon:before {
+	display: inline-block;
+	content: '\e000';
+	font-size: 1.3rem;
+	margin-top: -1rem;
+	margin-right: 0.9rem;
+}
+
+.fi-accordionOpenIcon:before {
+	display: inline-block;
+	transform: rotate(90deg);
+	content: '\e000';
+	font-size: 1.3rem;
+	margin-top: -1rem;
+	margin-right: 0.9rem;
+}
+.fi-arrow:before {
+ display: inline-block;
+ content: '\e07e';
+ font-size: 1.6rem;
+ 
+ }
+ .fi-download:before {
+ display: inline-block;
+ content: '\e035';
+ font-size: 1.6rem;
+ }
+ .fi-import:before {
+ display: inline-block;
+ content: '\e0c8';
+ font-size: 1.6rem;
+ transform: rotate(90deg);
+ 
+ }
+.hardware_setting_img {
+	border: 0.1rem solid #B4B4B4;
+	height: 300px;
+	margin: 29px 0 0 20px;
+}
+
+/* Css for admin org add table*/
+#mainTabContainer_admin .dijitTabController.dijitTabContainerLeft-tabs.dijitAlignLeft{
+	background: #FFFFFF;
+}
+#mainTabContainer_admin .dijitTab {
+	background-color: #FFF;
+}
+.floatleft.addCssIntreeTable #addAdminOrgHeader {
+	border: none;
+}
+
+.floatleft.addCssIntreeTable #addAdminOrgRows {
+	border: none;
+}
+
+.floatleft.addCssIntreeTable .dijitInline.gridxSaveCancel .dijitInline.gridxSaveNode,.floatleft.addCssIntreeTable .dijitInline.gridxSaveCancel .dijitInline.gridxCancelNode
+	{
+	padding-top: 0px !important;
+	height: 32px !important;
+	line-height: 21px !important;
+}
+.classForEditRowFormFields label{
+	padding-left: 15px;
+}
+.classForEditRowFormFields .dijitInputField.dijitButtonText{
+	width: 52px;
+	overflow: hidden;
+}
+#widget_multiSelectIdforLdapLocales table, #widget_multiSelectIdforLdapRoles table, #widget_multiSelectIdforPrivileges table, #widget_multiSelectIdforOrganizations table{
+	width:100%;
+}
+/*End here*/
+
+/*Equipment Css*/
+#equipmentTab0,#equipmentTab1,#equipmentTab2 {
+	/* padding-top: 0px; */
+}
+/* #mainTabContainer_equipment .dijitTabPaneWrapper.dijitTabContainerLeft-container.dijitAlignCenter{
+	border-top: none;
+	border-right: none;
+	border-bottom: none;
+}
+ */
+#mainTabContainer_equipment .dijitTabController.dijitTabContainerLeft-tabs.dijitAlignLeft{
+	background: #FFFFFF;
+}
+#mainTabContainer_equipment .dijitTab {
+	background-color: #FFF;
+}
+.equipServerConfig {
+	padding: 20px 0 0 0px;
+}
+
+.equipServerConfig label {
+	padding-left: 34px;
+}
+
+.equipServerConfig .dijitPlaceHolder.dijitInputField {
+	line-height: 22px;
+}
+
+.prime .dijitTabContainer .dijitTabContainerLeft-tabs .dijitTabChecked {
+	color: #379BBE;
+	font-weight: normal;
+}
+
+.prime .dijitTabContainer .dijitTab .dijitTabInnerDiv .tabIconNode {
+	color: #35A20B;
+}
+
+.prime .dijitTabContainer .dijitTabContainerLeft-tabs .dijitTabChecked .fi-check
+	{
+	color: #2B9ADB /* transparent */ !important;
+}
+
+/* End here*/
+
+/*lan Css*/
+#lanTab0,#lanTab1,#lanTab2 {
+	/* padding-top: 0px; */
+}
+#mainTabContainer_lan .dijitTabController.dijitTabContainerLeft-tabs.dijitAlignLeft{
+	background: #FFFFFF;
+}
+#mainTabContainer_lan .dijitTab {
+	background-color: #FFF;
+}
+.vnicTemplateConfig {
+	padding: 10px 0 0 0px;
+}
+
+.vnicTemplateConfig label {
+	padding-left: 34px;
+}
+
+.lanMgmtIPPoolConfig {
+	padding: 10px 0 0 0px;
+}
+.lanMgmtIPPoolConfig label {
+	padding-left: 25px;
+}
+.commonclassForFormFields{
+	padding: 10px 0 0 0px;
+}
+.commonclassForFormFields label{
+	padding-left: 25px;
+}
+.commonclassForFormFieldsCallHomeSetting{
+	padding: 10px 0 0 0px;
+}
+.commonclassForFormFieldsCallHomeSetting label{
+	padding-left: 20px;
+}
+.vnicTemplateConfig .dijitPlaceHolder.dijitInputField {
+	line-height: 22px;
+}
+
+.prime #vnicTempConfigTable .row.row-editor .row-table tr td.cell-container
+	{
+	vertical-align: top !important;
+}
+
+.prime #vnicTempConfigTable .row.row-editor .row-table tr td.cell-container .dijit.dijitReset.dijitInline.dojoxCheckedMultiSelectWrapper
+	{
+	min-width: 100px;
+	overflow-x: hidden;
+}
+
+/* End here*/
+
+/*SAN Css*/
+#sanTab0,#sanTab1,#sanTab2 {
+	/* padding-top: 0px; */
+}
+#mainTabContainer_san .dijitTabController.dijitTabContainerLeft-tabs.dijitAlignLeft{
+	background: #FFFFFF;
+}
+#mainTabContainer_san .dijitTab {
+	background-color: #FFF;
+}
+.sanWWxNConfig {
+	padding: 10px 0 0 0px;
+}
+
+.sanWWxNConfig label {
+	padding-left: 5px;
+}
+
+.divClosedCss {
+	background: #F5F5F5;
+	border: .1rem solid #BDB4B4;
+	cursor: pointer !important;
+	height: 3.4rem;
+	font-weight: bold;
+	font-family: Arial;
+	color: #646464;
+}
+
+.divClosedCss .titleforSlide,.divOpenCss .titleforSlide {
+	text-align: left;
+	line-height: 3rem;
+	border: 0px;
+	vertical-align: middle;
+	padding: 3px 30px;
+}
+
+.divOpenCss {
+	background: #FFF;
+	border: .1rem solid #D4D0D0;
+	cursor: pointer !important;
+	height: 3.4rem;
+	font-weight: bold;
+	font-family: Arial;
+	color: #646464;
+	margin-left: -1px;
+}
+.sanAdapterPolicyPop label{
+	margin-right: 0px;
+	margin-left:5px;
+}
+/* End here*/
+
+/*Servers CSS*/
+#serversTab0,#serversTab1,#serversTab2 {
+	/* padding-top: 0px; */
+}
+#mainTabContainer_servers .dijitTabController.dijitTabContainerLeft-tabs.dijitAlignLeft{
+	background: #FFFFFF;
+}
+#mainTabContainer_servers .dijitTab {
+	background-color: #FFF;
+}
+.serversLanSanPolicyConfig {
+	padding: 10px 0 0 0px;
+}
+
+.serversLanSanPolicyConfig #serversLanPolicyTableForm label {
+	margin-right: 4px;
+	padding-left: 15px;
+}
+
+.serversLanSanPolicyConfig #serversServerQualifierTableForm label {
+	margin-right: 4px;
+	padding-left: 15px;
+}
+
+.serversLanSanPolicyConfig label {
+	padding-left: 34px;
+}
+
+.serverpoolQualifierConfig {
+	padding: 10px 0 0 0px;
+}
+
+.serverpoolQualifierConfig label {
+	margin-right: 5px;
+	padding-left: 10px;
+}
+
+.prime #serversServiceTempTable .row.row-editor .row-table tr td.cell-container
+	{
+	vertical-align: top !important;
+}
+
+#dndForLANandSANandLocaldisk li:hover {
+	border-bottom: 1px solid #4399BD;
+	background-image: linear-gradient(#4399BD, #C8DFF1);
+}
+/*Increase heading height for Qualifire table*/
+#addIdForChangeTableHeaderHeight .table-head-node-container .table-header-container, #addIdForChangeTableHeaderHeight .table-head-node-container .table-header-container td.cell-container{
+	height: 50px;
+	text-align:center;
+}
+#addIdForChangeTableHeaderHeight .table-head-node-container .table-header-container td.cell-container div.cell{
+	text-align:center !important;
+}
+/*Increase heading height for SPT table */
+#addIdForChangeTableHeaderHeightForSPT .table-head-node-container .table-header-container, #addIdForChangeTableHeaderHeightForSPT .table-head-node-container .table-header-container td.cell-container{
+	height: 50px;
+	text-align:center;
+}
+#addIdForChangeTableHeaderHeightForSPT .table-head-node-container .table-header-container td.cell-container div.cell{
+	text-align:center !important;
+}
+/*Increase table heading height for common class*/
+.addClassForColumnHeight .table-head-node-container .table-header-container, .addClassForColumnHeight .table-head-node-container .table-header-container td.cell-container{
+	height: 50px;
+	text-align:center;
+}
+.addClassForColumnHeight .table-head-node-container .table-header-container td.cell-container div.cell{
+	text-align:center !important;
+}
+/*--End here*/
+#serversBootPolicyConfigureDialog .dijitDialogTitleBar{
+	height: 0px;
+}
+#serversBootPolicyConfigureDialog .dijitDialogPaneContent{
+margin-top: 0px;
+}
+	
+.accordionFieldsBorder{
+	border: 1px dashed #CCC; padding: 15px;
+	width: 97%;
+}
+
+.textUpperCase .dijitInputContainer INPUT{
+	text-transform: uppercase;
+}
+blockquote {
+  font-size: 0.916em;
+  margin-top: 0.272em;
+  margin-bottom: 0.272em;
+  line-height: 0px;
+  padding: 1.636em;
+  border: 1px dashed #F42E2C;
+}
+.note {
+  color: #333;
+  position: relative;
+  font-family: Arial;
+  font-size: 14px;
+  /* box-shadow: 0 10px 10px 2px rgba(0,0,0,0.3); */
+}
+.note .fi-minor{
+	padding-right: 6px;
+}
+/* User Mgmt Container CSS*/
+#userManagementContainer{
+	width: 90%;
+    height: 85%;
+    border: 1px solid #DDDDDD;
+    margin: auto;
+    display: table;
+    border-radius:5px; 
+}
+.userMgmtPageHeader{
+	background: #DDDDDD;
+	height: 40px;
+	width: 99%;
+	border-radius:5px;
+	padding: 2px 4px 2px 10px;
+}
+.userMgmtPageHeader h2{
+	color: #666666;
+    font-family: CiscoSansThin, Arial;
+    font-size: 24px;
+}
+.userMgmtPageHeader h2 span{
+	float: right;
+    padding-right: 10px;
+}
+#pageFieldContainer{
+	padding-top: 20px;
+	padding-left: 10px;
+	border-bottom: 1px solid #DDDDDD;
+	padding-bottom: 20px;
+}
+#pageFieldContainer label{
+	padding-left: 20px;
+}
+#tableContainer{
+	width: 100%;
+	margin: auto;
+    display: table;
+    padding-top: 20px
+}
+#widget_userCecId span{
+	padding-top: 4px;
+}
+
+#accessDeniedContainer{
+	width: 45%;
+    height: 30%;
+    border: 3px solid #0071bc;
+    margin: auto;
+    display: table;
+    border-radius: 60px;
+    background-color: #646464;
+}
+#accessDeniedContainer .accessDeniedInner{
+    margin: auto;
+    display: table;
+    padding-top: 70px;
+    font-size: 14px;
+    font-family: arial;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #FFF;
+}
+
+#accessDeniedContainer .accessDeniedHeadIn {
+	font-size: 30px;
+    margin: auto;
+    display: table;
+    border-bottom: 2px solid #DA5C36;
+    color: #DA5C36;
+    }
+/* END Here*/

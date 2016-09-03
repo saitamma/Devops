@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 18, 2015 3:12:19 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Callhomeperiodicsysteminventory" table="callhomeperiodicsysteminventory" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="callhomeEp" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Callhomeep" fetch="select">
+            <column name="FK_callhomeep" not-null="true" />
+        </many-to-one>
+        <property name="adminState" type="string">
+            <column name="adminState" />
+        </property>
+        <property name="intervalDays" type="string">
+            <column name="intervalDays" />
+        </property>
+        <property name="maximumRetryCount" type="string">
+            <column name="maximumRetryCount" />
+        </property>
+        <property name="minimumSendNowIntervalSeconds" type="string">
+            <column name="minimumSendNowIntervalSeconds" />
+        </property>
+        <property name="pollIntervalSeconds" type="string">
+            <column name="pollIntervalSeconds" />
+        </property>
+        <property name="retryDelayMinutes" type="string">
+            <column name="retryDelayMinutes" />
+        </property>
+        <property name="sendNow" type="string">
+            <column name="sendNow" />
+        </property>
+        <property name="timeOfDayHour" type="string">
+            <column name="timeOfDayHour" />
+        </property>
+        <property name="timeOfDayMinute" type="string">
+            <column name="timeOfDayMinute" />
+        </property>
+    </class>
+</hibernate-mapping>

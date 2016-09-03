@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Lsbootlanimagepath" table="lsbootlanimagepath" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="lsbootlan" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Lsbootlan" fetch="select">
+            <column name="FK_lsbootLan" not-null="true" />
+        </many-to-one>
+        <property name="vnicName" type="string">
+            <column name="vnicName" />
+        </property>
+        <property name="type" type="string">
+            <column name="type_type" />
+        </property>
+        <property name="provSrvPolicyName" type="string">
+            <column name="provSrvPolicyName" />
+        </property>
+        <property name="imgSecPolicyName" type="string">
+            <column name="imgSecPolicyName" />
+        </property>
+        <property name="imgPolicyName" type="string">
+            <column name="imgPolicyName" />
+        </property>
+        <property name="iSCSIVnicName" type="string">
+            <column name="iSCSIVnicName" />
+        </property>
+        <property name="bootIpPolicyName" type="string">
+            <column name="bootIpPolicyName" />
+        </property>
+    </class>
+</hibernate-mapping>

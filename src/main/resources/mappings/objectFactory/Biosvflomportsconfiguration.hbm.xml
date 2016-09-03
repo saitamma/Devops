@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 19, 2015 5:40:55 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Biosvflomportsconfiguration" table="biosVfLOMPortsConfiguration" >
+        <id name="primaryKey" type="java.lang.Integer">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="biosvprofile" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Biosvprofile" fetch="select">
+            <column name="FK_biosVProfile" not-null="true" />
+        </many-to-one>
+        <property name="childAction" type="string">
+            <column name="childAction" />
+        </property>
+        <property name="rn" type="string">
+            <column name="rn" />
+        </property>
+        <property name="vpAllOnboardLomports" type="string">
+            <column name="vpAllOnboardLOMPorts" />
+        </property>
+        <property name="vpLomport0optionRom" type="string">
+            <column name="vpLOMPort0OptionROM" />
+        </property>
+        <property name="vpLomport1optionRom" type="string">
+            <column name="vpLOMPort1OptionROM" />
+        </property>
+        <property name="vpLomport2optionRom" type="string">
+            <column name="vpLOMPort2OptionROM" />
+        </property>
+        <property name="vpLomport3optionRom" type="string">
+            <column name="vpLOMPort3OptionROM" />
+        </property>
+    </class>
+</hibernate-mapping>

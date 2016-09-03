@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Ippoolpool" table="ippoolpool" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="orgorg" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Orgorg" fetch="select">
+            <column name="FK_orgOrg" not-null="true" />
+        </many-to-one>
+        <property name="policyOwner" type="string">
+            <column name="policyOwner" />
+        </property>
+        <property name="descr" type="string">
+            <column name="descr" />
+        </property>
+        <property name="supportsDhcp" type="string">
+            <column name="supportsDHCP" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="isNetBiosenabled" type="string">
+            <column name="isNetBIOSEnabled" />
+        </property>
+        <property name="guid" type="string">
+            <column name="guid" />
+        </property>
+        <property name="extManaged" type="string">
+            <column name="extManaged" />
+        </property>
+        <property name="assignmentOrder" type="string">
+            <column name="assignmentOrder" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Lsbootsancatsanimagepath" table="lsbootsancatsanimagepath" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="lsbootsancatsanimage" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Lsbootsancatsanimage" fetch="select">
+            <column name="FK_lsbootSanCatSanImage" not-null="true" />
+        </many-to-one>
+        <property name="wwn" type="string">
+            <column name="wwn" />
+        </property>
+        <property name="type" type="string">
+            <column name="type_type" />
+        </property>
+        <property name="lun" type="string">
+            <column name="lun" />
+        </property>
+    </class>
+</hibernate-mapping>

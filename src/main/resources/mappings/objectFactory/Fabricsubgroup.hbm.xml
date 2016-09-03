@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 24, 2016 5:16:05 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Fabricsubgroup" table="fabricsubgroup">
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="fabricdceswsrv" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Fabricdceswsrv" fetch="select">
+            <column name="FK_fabricDceSwSrv" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="slotId" type="string">
+            <column name="slotId" />
+        </property>
+        <property name="aggrPortId" type="string">
+            <column name="aggrPortId" />
+        </property>
+    </class>
+</hibernate-mapping>

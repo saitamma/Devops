@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 25, 2014 7:10:32 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Aaaldapep" table="aaaldapep" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="topSystem" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Topsystem" fetch="select">
+            <column name="FK_topSystem" not-null="true" />
+        </many-to-one>
+        <property name="attribute" type="string">
+            <column name="attribute" />
+        </property>
+        <property name="basedn" type="string">
+            <column name="basedn" />
+        </property>
+        <property name="descr" type="string">
+            <column name="descr" />
+        </property>
+        <property name="filter" type="string">
+            <column name="filter" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="policyOwner" type="string">
+            <column name="policyOwner" />
+        </property>
+        <property name="retries" type="string">
+            <column name="retries" />
+        </property>
+        <property name="timeout" type="string">
+            <column name="timeout" />
+        </property>
+    </class>
+</hibernate-mapping>

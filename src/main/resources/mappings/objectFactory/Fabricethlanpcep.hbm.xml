@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 11, 2014 10:41:27 AM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Fabricethlanpcep" table="fabricethlanpcep" >
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="fabricethlanpc" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Fabricethlanpc" fetch="select">
+            <column name="FK_fabricEthLanPc" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="adminState" type="string">
+            <column name="adminState" />
+        </property>
+        <property name="slotId" type="string">
+            <column name="slotId" />
+        </property>
+        <property name="portId" type="string">
+            <column name="portId" />
+        </property>
+        <property name="ethLinkProfileName" type="string">
+            <column name="ethLinkProfileName" />
+        </property>
+    </class>
+</hibernate-mapping>

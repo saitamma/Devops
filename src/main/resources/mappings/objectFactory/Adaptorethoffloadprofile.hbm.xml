@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 5, 2015 11:21:21 AM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.cisco.ca.cstg.pdi.pojos.objectFactory.Adaptorethoffloadprofile" table="adaptorethoffloadprofile">
+        <id name="primaryKey" type="int">
+            <column name="PrimaryKey" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="adaptorhostethifprofile" class="com.cisco.ca.cstg.pdi.pojos.objectFactory.Adaptorhostethifprofile" fetch="select">
+            <column name="FK_adaptorhostethifprofile" not-null="true" />
+        </many-to-one>
+        <property name="largeReceive" type="string">
+            <column name="largeReceive" />
+        </property>
+        <property name="tcpRxChecksum" type="string">
+            <column name="tcpRxChecksum" />
+        </property>
+        <property name="tcpSegment" type="string">
+            <column name="tcpSegment" />
+        </property>
+        <property name="tcpTxChecksum" type="string">
+            <column name="tcpTxChecksum" />
+        </property>
+    </class>
+</hibernate-mapping>
